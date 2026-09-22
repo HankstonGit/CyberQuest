@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpalimddurtgc" path="res://UI/scripts/MainMenu.gd" id="1_a42fl"]
 [ext_resource type="Script" uid="uid://bfxp4ewgmu6iu" path="res://UI/scripts/matrix_background.gd" id="2_0eype"]
+[ext_resource type="AudioStream" uid="uid://dfd7gtcu8pis1" path="res://UI/assets/Menu_Button.mp3" id="3_xnki4"]
 
 [node name="MainMenu" type="Control" unique_id=721067494]
 layout_mode = 3
@@ -74,6 +75,9 @@ text = "Settings"
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1749836755]
 layout_mode = 2
 text = "Quit"
+
+[node name="MenuButton" type="AudioStreamPlayer" parent="." unique_id=855834331]
+stream = ExtResource("3_xnki4")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

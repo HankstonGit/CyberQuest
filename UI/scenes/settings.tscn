@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cav7phicrruch"]
 
 [ext_resource type="Script" uid="uid://cv7lvycg7u06w" path="res://UI/scripts/settings.gd" id="1_eis3d"]
+[ext_resource type="AudioStream" uid="uid://dfd7gtcu8pis1" path="res://UI/assets/Menu_Button.mp3" id="2_jfwsk"]
 
 [node name="Settings" type="Control" unique_id=1415771578]
 layout_mode = 3
@@ -10,6 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eis3d")
+
+[node name="MenuButton" type="AudioStreamPlayer" parent="." unique_id=1344362831]
+stream = ExtResource("2_jfwsk")
 
 [node name="BlackOutline" type="ColorRect" parent="." unique_id=985096534]
 layout_mode = 0
@@ -61,12 +65,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1607416596]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Settings"
-
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1379217351]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

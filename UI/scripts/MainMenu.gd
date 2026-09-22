@@ -25,10 +25,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			focused.pressed.emit()
 
 func _on_play_button_pressed() -> void:
+	$MenuButton.play(0.8)
 	get_tree().change_scene_to_file("res://game.tscn")
 
 func _on_settings_button_pressed() -> void:
+	$MenuButton.play(0.8)
 	return
 
 func _on_quit_button_pressed() -> void:
+	$MenuButton.play(0.8)
 	get_tree().quit()

@@ -9,3 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_resume_button_pressed() -> void:
+	$MenuButton.play(0.8)
+	pass # Replace with function body.
+
+
+func _on_quit_button_pressed() -> void:
+	$MenuButton.play(0.8)
+	get_tree().change_scene_to_file("res://UI/scenes/main_menu.tscn")
+	pass # Replace with function body.
