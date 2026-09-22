@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cav7phicrruch"]
+
+[ext_resource type="Script" uid="uid://cv7lvycg7u06w" path="res://UI/scripts/settings.gd" id="1_eis3d"]
+
+[node name="Settings" type="Control" unique_id=1415771578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eis3d")
+
+[node name="BlackOutline" type="ColorRect" parent="." unique_id=985096534]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 124.0
+offset_right = 344.0
+offset_bottom = 164.0
+scale = Vector2(11.932249, 9.106926)
+color = Color(0, 0, 0, 1)
+
+[node name="RedBackground" type="ColorRect" parent="." unique_id=431420123]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 132.0
+offset_right = 353.0
+offset_bottom = 172.0
+scale = Vector2(11.606394, 8.718184)
+color = Color(1, 0.03529412, 0.078431375, 0.57254905)
+
+[node name="Settings" type="Label" parent="." unique_id=1873583948]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 203.0
+offset_right = 701.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Settings"
+
+[node name="()" type="Label" parent="." unique_id=1528013617]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 254.0
+offset_right = 615.0
+offset_bottom = 277.0
+scale = Vector2(0.6887818, 0.54128367)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "(placeholder)"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1586602344]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 283.0
+offset_right = 581.0
+offset_bottom = 384.0
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=2058068790]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1607416596]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1379217351]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Quit"
