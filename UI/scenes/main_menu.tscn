@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dlg6imp4wrb24"]
+
+[ext_resource type="Script" uid="uid://cpalimddurtgc" path="res://UI/scripts/MainMenu.gd" id="1_a42fl"]
+[ext_resource type="Script" uid="uid://bfxp4ewgmu6iu" path="res://UI/scripts/matrix_background.gd" id="2_0eype"]
+
+[node name="MainMenu" type="Control" unique_id=721067494]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5298045, 0.5534202)
+script = ExtResource("1_a42fl")
+
+[node name="MatrixBackground" type="ColorRect" parent="." unique_id=902229602]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -19.0
+offset_right = 1941.0
+offset_bottom = 1102.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_0eype")
+spark_count = 1250
+spark_color = Color(0.5523477, 0.0359118, 4.813075e-08, 1)
+spark_brightness = 1.0
+spark_size = 4.0
+spark_speed = 10.0
+
+[node name="Title" type="Label" parent="." unique_id=1372869621]
+layout_mode = 0
+offset_left = 802.1826
+offset_top = 359.5821
+offset_right = 1114.1826
+offset_bottom = 435.5821
+theme_override_colors/font_color = Color(0.95990497, 0, 0.09901873, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "CyberQuest"
+
+[node name="PlaceholderButtonBackground2" type="ColorRect" parent="." unique_id=2027748665]
+layout_mode = 0
+offset_left = 921.09436
+offset_top = 504.13773
+offset_right = 961.09436
+offset_bottom = 544.13776
+scale = Vector2(2.0884888, 2.829043)
+
+[node name="PlaceholderButtonBackground" type="ColorRect" parent="." unique_id=1805147065]
+layout_mode = 0
+offset_left = 919.2069
+offset_top = 502.3308
+offset_right = 959.2069
+offset_bottom = 542.3308
+scale = Vector2(2.0884888, 2.829043)
+color = Color(0.8685599, 0, 0.09697836, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=730987046]
+layout_mode = 0
+offset_left = 924.86945
+offset_top = 507.75165
+offset_right = 994.86945
+offset_bottom = 608.75165
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2090899770]
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=88713843]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1749836755]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
