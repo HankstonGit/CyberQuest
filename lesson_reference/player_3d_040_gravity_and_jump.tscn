@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccek3hxppp08n"]
 
 [ext_resource type="Script" uid="uid://c2gvtt0wvvbbb" path="res://lesson_reference/player_3d_040_gravity_and_jump.gd" id="1_8djxu"]
-[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://player/sophia_skin/sophia_skin.tscn" id="2_qryg7"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://main/player/sophia_skin/sophia_skin.tscn" id="2_qryg7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8x2xm"]
 

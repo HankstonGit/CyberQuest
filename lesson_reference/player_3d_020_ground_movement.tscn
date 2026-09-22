@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1r7y5wu2j2n1"]
 
 [ext_resource type="Script" uid="uid://rvo8n5q4we88" path="res://lesson_reference/player_3d_020_ground_movement.gd" id="1_m1f6h"]
-[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://player/sophia_skin/sophia_skin.tscn" id="2_fi37v"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://main/player/sophia_skin/sophia_skin.tscn" id="2_fi37v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8x2xm"]
 

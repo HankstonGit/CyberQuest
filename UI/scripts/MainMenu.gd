@@ -9,6 +9,10 @@ func _ready() -> void:
 		button.mouse_entered.connect(button.grab_focus)
 	buttons[selected_button].grab_focus()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause") and not event.is_echo():
+		get_tree().quit() # Exit game
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("move_down") and not event.is_echo():
 		selected_button = (selected_button + 1) % buttons.size()
@@ -26,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_play_button_pressed() -> void:
 	$MenuButton.play(0.8)
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://main/scenes/game.tscn")
 
 func _on_settings_button_pressed() -> void:
 	$MenuButton.play(0.8)

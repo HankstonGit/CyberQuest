@@ -1,22 +1,31 @@
 extends Control
 
+@onready var resume_button: Button = $VBoxContainer/ResumeButton
+@onready var quit_button: Button = $VBoxContainer/QuitButton
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	hide()
+	resume_button.pressed.connect(_resume)
+	quit_button.pressed.connect(_quit)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause") and not event.is_echo():
+		get_viewport().set_input_as_handled()
+		if get_tree().paused:
+			_resume()
+		else:
+			_pause()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _pause() -> void:
+	show()
+	get_tree().paused = true
+	resume_button.grab_focus()
 
+func _resume() -> void:
+	get_tree().paused = false
+	hide()
 
-func _on_resume_button_pressed() -> void:
-	$MenuButton.play(0.8)
-	pass # Replace with function body.
-
-
-func _on_quit_button_pressed() -> void:
-	$MenuButton.play(0.8)
+func _quit() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/scenes/main_menu.tscn")
-	pass # Replace with function body.
