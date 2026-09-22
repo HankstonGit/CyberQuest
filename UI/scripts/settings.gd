@@ -18,14 +18,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			_pause()
 
 func _pause() -> void:
+	$MenuButton.play(0.8)
 	show()
 	get_tree().paused = true
 	resume_button.grab_focus()
 
 func _resume() -> void:
+	$MenuButton.play(0.8)
 	get_tree().paused = false
 	hide()
 
 func _quit() -> void:
 	get_tree().paused = false
+	$MenuButton.play(0.8)
 	get_tree().change_scene_to_file("res://UI/scenes/main_menu.tscn")
