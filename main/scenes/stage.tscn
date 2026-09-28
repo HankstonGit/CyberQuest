@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://byje6ohj1wtlu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypubd"]
+albedo_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypubd"]
+material = SubResource("StandardMaterial3D_ypubd")
+size = Vector3(15, 0.2, 10)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ypubd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyjmv"]
+albedo_color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cyjmv"]
+material = SubResource("StandardMaterial3D_cyjmv")
+size = Vector2(15, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypubd"]
+size = Vector3(14.973572, 0.072753906, 2.045044)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ypubd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cyjmv"]
+
+[node name="GenericStage" type="Node3D" unique_id=738338662]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1584365338]
+transform = Transform3D(1, 0, 0, 0, -0.030982228, 0.99951994, 0, -0.99951994, -0.030982228, 0, 17.31131, 0)
+light_color = Color(0.6785218, 0, 0.02893024, 1)
+
+[node name="StageContainer" type="MultiMeshInstance3D" parent="." unique_id=355759446]
+
+[node name="Ground" type="MeshInstance3D" parent="StageContainer" unique_id=1233507174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05629754, 0)
+mesh = SubResource("BoxMesh_ypubd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageContainer/Ground" unique_id=349934331]
+shape = SubResource("WorldBoundaryShape3D_ypubd")
+
+[node name="BWall" type="MeshInstance3D" parent="StageContainer" unique_id=553296249]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.0257137, -4.949483)
+mesh = SubResource("PlaneMesh_cyjmv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageContainer/BWall" unique_id=277729583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00502491, -0.007771492, 0.055725098)
+shape = SubResource("BoxShape3D_ypubd")
+
+[node name="FWall" type="MeshInstance3D" parent="StageContainer" unique_id=430469121]
+transform = Transform3D(-0.9999362, -0.011287963, 4.9341203e-10, -2.2383481e-17, -4.3711392e-08, -1, 0.011287963, -0.9999362, 4.37086e-08, 0, 1.0257137, 4.845249)
+mesh = SubResource("PlaneMesh_cyjmv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageContainer/FWall" unique_id=476145641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00502491, -0.007771492, 0.055725098)
+shape = SubResource("BoxShape3D_ypubd")
+
+[node name="RWall" type="MeshInstance3D" parent="StageContainer" unique_id=1879156464]
+transform = Transform3D(0.009957263, 1.0049577, -4.370645e-08, 0, -4.3933056e-08, -1, -0.6625117, 0.015104077, -6.5688893e-10, -7.438104, 1.0257137, -0.014716148)
+mesh = SubResource("PlaneMesh_cyjmv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageContainer/RWall" unique_id=531416938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00502491, -0.007771492, 0.055725098)
+shape = SubResource("BoxShape3D_ypubd")
+
+[node name="LWall" type="MeshInstance3D" parent="StageContainer" unique_id=1390644543]
+transform = Transform3D(-0.00042217504, -1.0050709, 4.371138e-08, 0, -4.3933053e-08, -0.99999994, 0.6625864, -0.00064039417, 2.7851277e-11, 7.440277, 1.0257137, -0.014716148)
+mesh = SubResource("PlaneMesh_cyjmv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StageContainer/LWall" unique_id=878945916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00502491, -0.007771492, 0.055725098)
+shape = SubResource("BoxShape3D_ypubd")
+
+[node name="PStand" type="MeshInstance3D" parent="StageContainer" unique_id=826586563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.589532, -0.7277789, 0.0041692257)
+mesh = SubResource("CylinderMesh_ypubd")
+
+[node name="EStand" type="MeshInstance3D" parent="StageContainer" unique_id=619552399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6678905, -0.893646, 0.0041692257)
+mesh = SubResource("CylinderMesh_ypubd")
+
+[node name="Arena" type="MeshInstance3D" parent="StageContainer" unique_id=644109494]
+transform = Transform3D(4.8947973, 0, 0, 0, 1, 0, 0, 0, 3.1942782, 0, -0.83770776, 0)
+mesh = SubResource("CylinderMesh_cyjmv")
+
+[node name="Spawns" type="Node" parent="." unique_id=222074979]
+
+[node name="Player" type="Marker3D" parent="Spawns" unique_id=1094341880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.615937, 0.30714393, 0)
+
+[node name="Enemy" type="Marker3D" parent="Spawns" unique_id=1325757714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7063828, 0.17414069, 0)
