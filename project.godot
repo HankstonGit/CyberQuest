@@ -12,7 +12,7 @@ config_version=5
 
 config/name="CyberQuest"
 run/main_scene="uid://dlg6imp4wrb24"
-config/features=PackedStringArray("4.7", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.png"
 
 [audio]
@@ -22,14 +22,14 @@ buses/default_bus_layout="res://main/assets/default_bus_layout.tres"
 [autoload]
 
 Events="*res://autoload/events.gd"
+BattleData="*uid://b2epcojo8ylxd"
 
 [display]
 
 window/size/viewport_width=1024
 window/size/viewport_height=600
-window/size/mode=2
+window/size/mode=3
 window/size/initial_screen=1
-window/size/resizable=false
 window/size/window_width_override=2560
 window/size/window_height_override=1440
 window/stretch/mode="viewport"

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://t8fja08xc5v5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpxcc"]
+albedo_color = Color(3.4651809, 3.4651785, 8.62486e-05, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ftd5u"]
+material = SubResource("StandardMaterial3D_wpxcc")
+
+[node name="Cat" type="Node3D" unique_id=128821220]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2012677204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0340095, 0)
+mesh = SubResource("CapsuleMesh_ftd5u")

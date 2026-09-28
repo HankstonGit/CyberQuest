@@ -135,7 +135,7 @@ script = ExtResource("1_obcib")
 
 [node name="sophia" parent="." unique_id=113952403 instance=ExtResource("1_e4pev")]
 
-[node name="Skeleton3D" parent="sophia/rig" parent_id_path=PackedInt32Array(113952403, 140128194) index="0" unique_id=1725508303]
+[node name="Skeleton3D" parent="sophia/rig" parent_id_path=PackedInt32Array(113952403, 1317750162) index="0" unique_id=679425262]
 bones/0/position = Vector3(-5.9093077e-09, 0.6358905, -0.039630517)
 bones/0/rotation = Quaternion(0.29617634, 6.656203e-08, -3.2227248e-09, 0.95513326)
 bones/3/rotation = Quaternion(-0.06447644, -4.7503367e-08, 8.524015e-10, 0.99791926)

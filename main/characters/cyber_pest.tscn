@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c1qslovsyjbj5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rx03"]
+albedo_color = Color(18.821728, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_that3"]
+material = SubResource("StandardMaterial3D_7rx03")
+
+[node name="CyberPest" type="Node3D" unique_id=1180862311]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=811493821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0340095, 0)
+mesh = SubResource("CapsuleMesh_that3")
