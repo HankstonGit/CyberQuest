@@ -1,7 +1,7 @@
 extends Control
 
-@onready var resume_button: Button = $VBoxContainer/ResumeButton
-@onready var quit_button: Button = $VBoxContainer/QuitButton
+@onready var resume_button: Button = $BlackOutline5/BlackOutline
+@onready var quit_button: Button = $BlackOutline5/BlackOutline2
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

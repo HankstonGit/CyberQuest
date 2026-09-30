@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cl8rh7i7gg8ma"]
+
+[ext_resource type="Script" uid="uid://ke2fsjgipmjl" path="res://main/Dialouge/dialouge.gd" id="1_2k1t7"]
+[ext_resource type="Script" uid="uid://dpgbgjs12gltx" path="res://main/Dialouge/pause_calculator.gd" id="2_fxmtk"]
+
+[node name="Dialouge" type="Control" unique_id=753022492]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2k1t7")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=1690019773]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Content" type="RichTextLabel" parent="." unique_id=1409517579]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 850.0
+offset_bottom = 550.0
+bbcode_enabled = true
+text = "Hello! I am your instructor!"
+
+[node name="TypeTimer" type="Timer" parent="." unique_id=1110665277]
+wait_time = 0.04
+autostart = true
+
+[node name="PauseTimer" type="Timer" parent="." unique_id=1534067234]
+one_shot = true
+
+[node name="PauseCalculator" type="Node" parent="." unique_id=1376376178]
+script = ExtResource("2_fxmtk")
