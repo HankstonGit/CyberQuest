@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://byje6ohj1wtlu"]
 
 [ext_resource type="Script" uid="uid://cnolqerbp2x01" path="res://main/script/stage.gd" id="1_sb126"]
+[ext_resource type="Texture2D" uid="uid://b3f6b7buhh8as" path="res://UI/assets/CyberPest2.webp" id="2_7yyro"]
+[ext_resource type="Texture2D" uid="uid://c7itfbba1tdjk" path="res://UI/assets/Heart.webp" id="3_xktwa"]
+[ext_resource type="Texture2D" uid="uid://d3cf363ckedcg" path="res://UI/assets/CyberPest1.webp" id="4_tbpmu"]
+[ext_resource type="Texture2D" uid="uid://b4gxbag15ig7m" path="res://UI/assets/CyberPest3.webp" id="5_c3l37"]
+[ext_resource type="PackedScene" uid="uid://cav7phicrruch" path="res://UI/scenes/settings.tscn" id="6_tbpmu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypubd"]
 albedo_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
@@ -26,6 +31,7 @@ size = Vector3(14.973572, 0.072753906, 2.045044)
 [sub_resource type="CylinderMesh" id="CylinderMesh_cyjmv"]
 
 [node name="GenericStage" type="Node3D" unique_id=738338662]
+process_mode = 3
 script = ExtResource("1_sb126")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1584365338]
@@ -126,31 +132,58 @@ color = Color(0.2312278, 0.2312278, 0.2312278, 0.6627451)
 
 [node name="EnemyHealth" type="ProgressBar" parent="BattleUI/BattlePanel" unique_id=1126046931]
 layout_mode = 0
-offset_left = -501.0
-offset_top = -257.0
-offset_right = -251.0
-offset_bottom = -230.0
+offset_left = -454.0
+offset_top = -258.0
+offset_right = -204.0
+offset_bottom = -231.0
 show_percentage = false
 
 [node name="EnemyName" type="Label" parent="BattleUI/BattlePanel" unique_id=1512857555]
 layout_mode = 0
-offset_left = -478.0
-offset_top = -284.0
-offset_right = -400.0
-offset_bottom = -261.0
+offset_left = -366.0
+offset_top = -285.0
+offset_right = -288.0
+offset_bottom = -262.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.95686275)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "CyberPest"
 
 [node name="EnemyHP" type="Label" parent="BattleUI/BattlePanel" unique_id=42996357]
 layout_mode = 0
-offset_left = -364.0
-offset_top = -256.0
-offset_right = -324.0
-offset_bottom = -233.0
+offset_left = -317.0
+offset_top = -257.0
+offset_right = -277.0
+offset_bottom = -234.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "HP:"
+
+[node name="Signia" type="TextureRect" parent="BattleUI/BattlePanel" unique_id=1981928058]
+layout_mode = 0
+offset_left = -505.0
+offset_top = -280.0
+offset_right = -329.0
+offset_bottom = -86.0
+scale = Vector2(0.26510057, 0.2374166)
+texture = ExtResource("2_7yyro")
+
+[node name="PlayerBackground" type="ColorRect" parent="BattleUI/BattlePanel" unique_id=584900148]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 45.0
+offset_bottom = 36.0
+scale = Vector2(9.290031, 6.3396215)
+color = Color(0.2312278, 0.2312278, 0.2312278, 0.6627451)
+
+[node name="HPLogo" type="TextureRect" parent="BattleUI/BattlePanel" unique_id=1338097422]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 287.0
+offset_bottom = 260.0
+scale = Vector2(0.1313009, 0.11869822)
+texture = ExtResource("3_xktwa")
 
 [node name="Topic" type="Label" parent="BattleUI/BattlePanel" unique_id=143322803]
 layout_mode = 0
@@ -227,6 +260,88 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Option 4"
 
+[node name="DoubleOrNothing" type="Control" parent="BattleUI" unique_id=1135054938]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 332.0
+offset_top = 183.0
+offset_right = 372.0
+offset_bottom = 223.0
+
+[node name="Phase1" type="TextureRect" parent="BattleUI/DoubleOrNothing" unique_id=524794002]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -172.0
+offset_right = 149.0
+offset_bottom = 22.0
+scale = Vector2(2.4087305, 2.4820096)
+texture = ExtResource("4_tbpmu")
+
+[node name="Phase2" type="TextureRect" parent="BattleUI/DoubleOrNothing" unique_id=276755406]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -172.0
+offset_right = 149.0
+offset_bottom = 22.0
+scale = Vector2(2.4087305, 2.4820096)
+texture = ExtResource("2_7yyro")
+
+[node name="Phase3" type="TextureRect" parent="BattleUI/DoubleOrNothing" unique_id=1213652288]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -172.0
+offset_right = 149.0
+offset_bottom = 22.0
+scale = Vector2(2.4087305, 2.4820096)
+texture = ExtResource("5_c3l37")
+
+[node name="Outline" type="ColorRect" parent="BattleUI/DoubleOrNothing" unique_id=371537792]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 316.0
+offset_right = 104.0
+offset_bottom = 356.0
+scale = Vector2(6.1365905, 2.19283)
+color = Color(0, 0, 0, 0.7176471)
+
+[node name="Background" type="ColorRect" parent="BattleUI/DoubleOrNothing" unique_id=1412775789]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 317.0
+offset_right = 105.0
+offset_bottom = 357.0
+scale = Vector2(6.0844164, 2.1485412)
+color = Color(0.6378432, 0.6378432, 0.63784313, 0.7176471)
+
+[node name="BoxContainer" type="BoxContainer" parent="BattleUI/DoubleOrNothing" unique_id=185342551]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 360.0
+offset_right = 223.0
+offset_bottom = 400.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/DoubleOrNothing/BoxContainer" unique_id=1502973524]
+layout_mode = 2
+
+[node name="Yes!" type="Button" parent="BattleUI/DoubleOrNothing/BoxContainer/HBoxContainer" unique_id=1353037514]
+layout_mode = 2
+text = "Yes!"
+
+[node name="No!" type="Button" parent="BattleUI/DoubleOrNothing/BoxContainer/HBoxContainer" unique_id=2062803936]
+layout_mode = 2
+text = "No!"
+
+[node name="DoubleOrNothing?" type="Label" parent="BattleUI/DoubleOrNothing" unique_id=60502514]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 331.0
+offset_right = 262.0
+offset_bottom = 354.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Double or Nothing?"
+
 [node name="Victory" type="Label" parent="BattleUI" unique_id=497081364]
 visible = false
 offset_left = 431.0
@@ -250,3 +365,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
 text = "You Lose"
+
+[node name="Settings" type="CanvasLayer" parent="." unique_id=527112962]
+process_mode = 3
+
+[node name="Settings" parent="Settings" unique_id=1415771578 instance=ExtResource("6_tbpmu")]
+process_mode = 2

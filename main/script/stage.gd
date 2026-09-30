@@ -6,7 +6,8 @@ const SOPHIA_SCENE: PackedScene = preload(
 const CYBERPEST_SCENE: PackedScene = preload(
 	"res://main/characters/cyber_pest.tscn"
 )
-
+@onready var battle_ui: CanvasLayer = $BattleUI
+@onready var settings_layer: CanvasLayer = $Settings
 @onready var fighters: Node3D = $Fighters 
 @onready var player_spawn: Marker3D = $Spawns/Player 
 @onready var ally_spawn: Marker3D = $"Spawns/CyberPet(Ally)" 
@@ -14,6 +15,7 @@ const CYBERPEST_SCENE: PackedScene = preload(
 @onready var camera_behind: Camera3D = $CameraAngles/CameraBehind 
 @onready var camera_enemy: Camera3D = $CameraAngles/CameraEnemyAngle 
 @onready var camera_full: Camera3D = $CameraAngles/CameraFull 
+@onready var settings_menu: Control = $Settings/Settings
 @export var camera_switch_time: float = 5.0 
 @export var camera_move_distance: float = 0.5
 @export var camera_move_speed: float = 0.4
@@ -22,21 +24,40 @@ var battle_cameras: Array[Camera3D] = []
 var current_camera_index: int = 0 
 var camera_start_positions: Array[Vector3] = []
 var camera_move_time: float = 0.0 
- 
-func _ready() -> void: 
-	spawn_battle() 
-	setup_cameras() 
+var game_paused: bool = false
+
+func _ready() -> void:
+	settings_layer.hide()
+	settings_menu.hide()
+	battle_ui.show()
+	spawn_battle()
+	setup_cameras()
  
 func _process(delta: float) -> void:
+	if game_paused:
+		return
 	if battle_cameras.is_empty():
 		return
-	
 	camera_move_time += delta * camera_move_speed
-	
 	var camera = battle_cameras[current_camera_index]
 	var start_position = camera_start_positions[current_camera_index]
-	
 	camera.position.x = start_position.x + sin(camera_move_time) * camera_move_distance
+
+func toggle_pause() -> void:
+	print("PAUSE PRESSED")
+	game_paused = !game_paused
+	if game_paused:
+		print("PAUSING")
+		battle_ui.hide()
+		settings_layer.show()
+		settings_menu.show()
+		get_tree().paused = true
+	else:
+		print("UNPAUSING")
+		get_tree().paused = false
+		settings_menu.hide()
+		settings_layer.hide()
+		battle_ui.show()
 
 func spawn_battle() -> void: 
 	var sophia = SOPHIA_SCENE.instantiate() 
@@ -83,6 +104,15 @@ func switch_to_next_camera() -> void:
 	camera_move_time = 0.0
 	battle_cameras[current_camera_index].make_current() 
  
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.pressed and not event.echo:
+			print("KEY PRESSED: ", event.physical_keycode)
+			if event.physical_keycode == KEY_ESCAPE:
+				print("ESCAPE DETECTED")
+				toggle_pause()
+
+
 func show_player_side() -> void: 
 	camera_behind.make_current() 
 func show_enemy_side() -> void: 

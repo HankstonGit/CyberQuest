@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dbyqinoqfyusi" path="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/classroom_demoscene.fbx" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://dornw3sygguqy" path="res://level/StylooClassroomAssetPack GLTF & FBX/computer/FBX/COMPUTERdemoscene.fbx" id="13_m3nah"]
 [ext_resource type="PackedScene" uid="uid://uywlm4hhsl2m" path="res://level/StylooClassroomAssetPack GLTF & FBX/computer/FBX/COMPUTERchair.fbx" id="14_fm1jd"]
-[ext_resource type="PackedScene" uid="uid://cl8rh7i7gg8ma" path="res://main/Dialouge/dialouge.tscn" id="15_fm1jd"]
+[ext_resource type="PackedScene" uid="uid://cl8rh7i7gg8ma" path="res://main/scenes/dialouge.tscn" id="15_fm1jd"]
 [ext_resource type="Script" uid="uid://bw3i6imxrdk7s" path="res://level/dialouge_manager.gd" id="16_7jqyl"]
 [ext_resource type="Script" uid="uid://b1gjktfnr3e7s" path="res://level/intro_controller.gd" id="17_m5ivw"]
 
@@ -220,70 +220,70 @@ material = ExtResource("7_njuj4")
 [node name="classroom_demoscene" parent="CSGCombiner3D" unique_id=1958567849 instance=ExtResource("12_rhqlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.596827, 0.3, -37.751904)
 
-[node name="demoscene" parent="CSGCombiner3D/classroom_demoscene" index="0" unique_id=621631084]
+[node name="demoscene" parent="CSGCombiner3D/classroom_demoscene" index="0" unique_id=1237012750]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_1" parent="CSGCombiner3D/classroom_demoscene" index="1" unique_id=674894404]
+[node name="demoscene_1" parent="CSGCombiner3D/classroom_demoscene" index="1" unique_id=68390078]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_2" parent="CSGCombiner3D/classroom_demoscene" index="2" unique_id=589763688]
+[node name="demoscene_2" parent="CSGCombiner3D/classroom_demoscene" index="2" unique_id=1266964160]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_3" parent="CSGCombiner3D/classroom_demoscene" index="3" unique_id=1545393631]
+[node name="demoscene_3" parent="CSGCombiner3D/classroom_demoscene" index="3" unique_id=4072702]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_4" parent="CSGCombiner3D/classroom_demoscene" index="4" unique_id=160083907]
+[node name="demoscene_4" parent="CSGCombiner3D/classroom_demoscene" index="4" unique_id=1646236603]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_5" parent="CSGCombiner3D/classroom_demoscene" index="5" unique_id=1616377076]
+[node name="demoscene_5" parent="CSGCombiner3D/classroom_demoscene" index="5" unique_id=2052550346]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_6" parent="CSGCombiner3D/classroom_demoscene" index="6" unique_id=1164475181]
+[node name="demoscene_6" parent="CSGCombiner3D/classroom_demoscene" index="6" unique_id=246064754]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_7" parent="CSGCombiner3D/classroom_demoscene" index="7" unique_id=1013578463]
+[node name="demoscene_7" parent="CSGCombiner3D/classroom_demoscene" index="7" unique_id=1902897935]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_8" parent="CSGCombiner3D/classroom_demoscene" index="8" unique_id=1920428539]
+[node name="demoscene_8" parent="CSGCombiner3D/classroom_demoscene" index="8" unique_id=151884503]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_9" parent="CSGCombiner3D/classroom_demoscene" index="9" unique_id=1695401497]
+[node name="demoscene_9" parent="CSGCombiner3D/classroom_demoscene" index="9" unique_id=1099617578]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_10" parent="CSGCombiner3D/classroom_demoscene" index="10" unique_id=230324888]
+[node name="demoscene_10" parent="CSGCombiner3D/classroom_demoscene" index="10" unique_id=1937877485]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_11" parent="CSGCombiner3D/classroom_demoscene" index="11" unique_id=292831634]
+[node name="demoscene_11" parent="CSGCombiner3D/classroom_demoscene" index="11" unique_id=940440780]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_12" parent="CSGCombiner3D/classroom_demoscene" index="12" unique_id=872418975]
+[node name="demoscene_12" parent="CSGCombiner3D/classroom_demoscene" index="12" unique_id=1223584055]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_13" parent="CSGCombiner3D/classroom_demoscene" index="13" unique_id=2031731098]
+[node name="demoscene_13" parent="CSGCombiner3D/classroom_demoscene" index="13" unique_id=502697606]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_14" parent="CSGCombiner3D/classroom_demoscene" index="14" unique_id=586354811]
+[node name="demoscene_14" parent="CSGCombiner3D/classroom_demoscene" index="14" unique_id=390913798]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_15" parent="CSGCombiner3D/classroom_demoscene" index="15" unique_id=302621724]
+[node name="demoscene_15" parent="CSGCombiner3D/classroom_demoscene" index="15" unique_id=1818140323]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_16" parent="CSGCombiner3D/classroom_demoscene" index="16" unique_id=1800797871]
+[node name="demoscene_16" parent="CSGCombiner3D/classroom_demoscene" index="16" unique_id=690706382]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_17" parent="CSGCombiner3D/classroom_demoscene" index="17" unique_id=440992550]
+[node name="demoscene_17" parent="CSGCombiner3D/classroom_demoscene" index="17" unique_id=205585415]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_18" parent="CSGCombiner3D/classroom_demoscene" index="18" unique_id=1663290263]
+[node name="demoscene_18" parent="CSGCombiner3D/classroom_demoscene" index="18" unique_id=1671663785]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_19" parent="CSGCombiner3D/classroom_demoscene" index="19" unique_id=1305963698]
+[node name="demoscene_19" parent="CSGCombiner3D/classroom_demoscene" index="19" unique_id=1159180073]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_20" parent="CSGCombiner3D/classroom_demoscene" index="20" unique_id=827222580]
+[node name="demoscene_20" parent="CSGCombiner3D/classroom_demoscene" index="20" unique_id=1205187242]
 transform = Transform3D(1.2991534, 0, 0, 0, 1, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
-[node name="demoscene_21" parent="CSGCombiner3D/classroom_demoscene" index="21" unique_id=1493947043]
+[node name="demoscene_21" parent="CSGCombiner3D/classroom_demoscene" index="21" unique_id=1544005062]
 transform = Transform3D(1.2991534, 0, 0, 0, 1.1154706, 0, 0, 0, 1.7, -1.4864349, 0, 35.765545)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGCombiner3D/classroom_demoscene/demoscene_21" index="0" unique_id=937699939]
@@ -297,7 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.92787, 0.3, -47.764633)
 [node name="COMPUTERchair" parent="CSGCombiner3D" unique_id=822420222 instance=ExtResource("14_fm1jd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.145948, 0.6880237, -44.85627)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGCombiner3D/COMPUTERchair/COMPUTERchair" parent_id_path=PackedInt32Array(822420222, 2036692256) index="1" unique_id=708221318]
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGCombiner3D/COMPUTERchair/COMPUTERchair" parent_id_path=PackedInt32Array(822420222, 433290968) index="1" unique_id=708221318]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/COMPUTERchair/COMPUTERchair/StaticBody3D" unique_id=2016941949]
 shape = SubResource("ConcavePolygonShape3D_fm1jd")

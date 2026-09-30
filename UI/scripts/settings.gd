@@ -9,24 +9,11 @@ func _ready() -> void:
 	resume_button.pressed.connect(_resume)
 	quit_button.pressed.connect(_quit)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Pause") and not event.is_echo():
-		get_viewport().set_input_as_handled()
-		if get_tree().paused:
-			_resume()
-		else:
-			_pause()
-
-func _pause() -> void:
-	$MenuButton.play(0.8)
-	show()
-	get_tree().paused = true
-	resume_button.grab_focus()
-
 func _resume() -> void:
 	$MenuButton.play(0.8)
-	get_tree().paused = false
-	hide()
+	var stage = get_parent().get_parent()
+	if stage.has_method("toggle_pause"):
+		stage.toggle_pause()
 
 func _quit() -> void:
 	get_tree().paused = false

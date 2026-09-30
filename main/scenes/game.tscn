@@ -5,12 +5,15 @@
 [ext_resource type="Script" uid="uid://e477l5rmvo85" path="res://main/script/free_camera.gd" id="5_5y4mc"]
 [ext_resource type="PackedScene" uid="uid://cav7phicrruch" path="res://UI/scenes/settings.tscn" id="6_vu1ds"]
 [ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="7_2frud"]
+[ext_resource type="Script" uid="uid://gsd83myw1qhb" path="res://main/script/tv_menu.gd" id="7_hrike"]
+[ext_resource type="Script" uid="uid://ke2fsjgipmjl" path="res://main/script/dialouge.gd" id="8_uphns"]
+[ext_resource type="Script" uid="uid://dpgbgjs12gltx" path="res://main/script/pause_calculator.gd" id="9_tkmog"]
 [ext_resource type="PackedScene" uid="uid://bxg6oejpaitdt" path="res://level/interactable/flag/flag_reached_screen.tscn" id="19_cpgj4"]
 
 [node name="Game" type="Node" unique_id=1923663789]
 script = ExtResource("1_1il7v")
 
-[node name="Player3DTemplate" parent="." unique_id=760306675 instance=ExtResource("1_w0p8v")]
+[node name="Player3DTemplate" parent="." unique_id=1731636139 instance=ExtResource("1_w0p8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43638, 0, -7.8513)
 
 [node name="FlagReachedScreen" parent="." unique_id=1105071696 instance=ExtResource("19_cpgj4")]
@@ -22,5 +25,292 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.4)
 script = ExtResource("5_5y4mc")
 
 [node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1249967256]
+visible = false
 
 [node name="Settings" parent="PauseLayer" unique_id=1415771578 instance=ExtResource("6_vu1ds")]
+
+[node name="TVMenu" type="CanvasLayer" parent="." unique_id=1291845950 node_paths=PackedStringArray("dialogue_controller")]
+script = ExtResource("7_hrike")
+dialogue_controller = NodePath("../Dialogue")
+
+[node name="Blink1" type="ColorRect" parent="TVMenu" unique_id=845603659]
+visible = false
+offset_left = -9.0
+offset_top = 284.0
+offset_right = 1042.0
+offset_bottom = 299.0
+scale = Vector2(1, 0.28000122)
+
+[node name="Blink2" type="ColorRect" parent="TVMenu" unique_id=1205722694]
+visible = false
+offset_left = -10.0
+offset_top = 279.0
+offset_right = 1041.0
+offset_bottom = 294.0
+
+[node name="Blink3" type="ColorRect" parent="TVMenu" unique_id=272356844]
+visible = false
+offset_left = -6.0
+offset_top = 222.0
+offset_right = 1045.0
+offset_bottom = 237.0
+scale = Vector2(1, 10.840002)
+
+[node name="Blink4" type="ColorRect" parent="TVMenu" unique_id=1468386974]
+visible = false
+offset_left = -11.0
+offset_top = -24.000002
+offset_right = 1040.0
+offset_bottom = -9.000002
+scale = Vector2(1.0059195, 43.202312)
+
+[node name="Background" type="ColorRect" parent="TVMenu" unique_id=464277293]
+offset_left = -11.0
+offset_top = -24.000002
+offset_right = 1040.0
+offset_bottom = -9.000002
+scale = Vector2(1.0059195, 43.202312)
+color = Color(0.5137255, 1, 1, 0.7058824)
+
+[node name="BoxContainer" type="BoxContainer" parent="TVMenu" unique_id=407634033]
+offset_left = 710.0
+offset_top = 291.0
+offset_right = 859.0
+offset_bottom = 427.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TVMenu/BoxContainer" unique_id=776612813]
+layout_mode = 2
+
+[node name="Scam" type="Button" parent="TVMenu/BoxContainer/VBoxContainer" unique_id=1812761918]
+layout_mode = 2
+text = "Scam"
+
+[node name="Malware" type="Button" parent="TVMenu/BoxContainer/VBoxContainer" unique_id=1537344659]
+layout_mode = 2
+text = "Malware"
+
+[node name="Phishing" type="Button" parent="TVMenu/BoxContainer/VBoxContainer" unique_id=345131386]
+layout_mode = 2
+text = "Phishing"
+
+[node name="Social Engineering" type="Button" parent="TVMenu/BoxContainer/VBoxContainer" unique_id=307345596]
+layout_mode = 2
+text = "Social Engineering"
+
+[node name="HoverScam" type="ColorRect" parent="TVMenu" unique_id=394360395]
+offset_left = 673.0
+offset_top = 296.0
+offset_right = 713.0
+offset_bottom = 336.0
+scale = Vector2(0.65620005, 0.5171308)
+
+[node name="HoverMalware" type="ColorRect" parent="TVMenu" unique_id=185687156]
+offset_left = 673.0
+offset_top = 330.0
+offset_right = 713.0
+offset_bottom = 370.0
+scale = Vector2(0.65620005, 0.5171308)
+
+[node name="HoverPhishing" type="ColorRect" parent="TVMenu" unique_id=1469346766]
+offset_left = 673.0
+offset_top = 364.0
+offset_right = 713.0
+offset_bottom = 404.0
+scale = Vector2(0.65620005, 0.5171308)
+
+[node name="HoverSocialEngineering" type="ColorRect" parent="TVMenu" unique_id=489211804]
+offset_left = 673.0
+offset_top = 401.0
+offset_right = 713.0
+offset_bottom = 441.0
+scale = Vector2(0.65620005, 0.5171308)
+
+[node name="Welcome!" type="Label" parent="TVMenu" unique_id=524499849]
+offset_left = 224.0
+offset_top = 33.0
+offset_right = 264.0
+offset_bottom = 56.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Welcome Students!"
+
+[node name="Info" type="Label" parent="TVMenu" unique_id=71848771]
+offset_left = 51.0
+offset_top = 153.0
+offset_right = 980.0
+offset_bottom = 176.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "This is cyberquest which is a cyber security oriented game that teaches you how to protect yourself against security risk."
+
+[node name="UnderWelcome2" type="ColorRect" parent="TVMenu" unique_id=937304253]
+offset_left = 228.0
+offset_top = 115.0
+offset_right = 268.0
+offset_bottom = 155.0
+scale = Vector2(15.081519, 0.45081556)
+color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+
+[node name="UnderWelcome" type="ColorRect" parent="TVMenu" unique_id=158804179]
+offset_left = 224.0
+offset_top = 112.0
+offset_right = 264.0
+offset_bottom = 152.0
+scale = Vector2(15.081519, 0.45081556)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TVMenu" unique_id=2009573859]
+offset_left = 447.0
+offset_top = 347.0
+offset_right = 487.0
+offset_bottom = 387.0
+bbcode_enabled = true
+text = "[center][font_size=28][b]CYBER SECURITY BASICS[/b][/font_size][/center]
+
+[font_size=22][b]MALWARE[/b][/font_size]
+
+Malware is malicious software designed to damage, disrupt, spy on, or gain unauthorized access to a computer or network.
+
+Common types include viruses, ransomware, spyware, worms, and trojans.
+
+[b]Warning Signs:[/b]
+• Unexpected pop-ups or programs
+• Slow computer performance
+• Files becoming corrupted or encrypted
+• Antivirus software being disabled unexpectedly
+
+[b]Stay Safe:[/b]
+Keep your software updated, use trusted antivirus protection, and avoid downloading unknown files or programs.
+
+
+[font_size=22][b]SOCIAL ENGINEERING[/b][/font_size]
+
+Social engineering is when an attacker manipulates a person into revealing information or performing an unsafe action.
+
+Instead of attacking a computer directly, the attacker targets human trust, fear, curiosity, or urgency.
+
+[b]Common Tactics:[/b]
+• Pretending to be a trusted person or company
+• Creating a fake emergency
+• Asking for passwords or verification codes
+• Offering fake rewards or prizes
+
+[b]Stay Safe:[/b]
+Verify who you are communicating with before sharing information. Do not let urgency pressure you into making a quick decision.
+
+
+[font_size=22][b]PHISHING[/b][/font_size]
+
+Phishing is a type of social engineering where attackers send fake emails, messages, or websites designed to steal information.
+
+Attackers may pretend to be banks, schools, employers, delivery companies, or other trusted organizations.
+
+[b]Warning Signs:[/b]
+• Suspicious links
+• Unexpected attachments
+• Misspelled website addresses
+• Requests for passwords or personal information
+• Messages claiming immediate action is required
+
+[b]Stay Safe:[/b]
+Do not click suspicious links. Visit official websites directly and verify unexpected messages through another trusted method.
+
+
+[font_size=22][b]SCAMS[/b][/font_size]
+
+A scam is a dishonest scheme designed to trick someone into giving away money, information, accounts, or other valuable resources.
+
+Scams can happen through websites, email, social media, phone calls, text messages, and even online games.
+
+[b]Common Scams:[/b]
+• Fake giveaways
+• Fake technical support
+• Investment scams
+• Impersonation scams
+• Fake online stores
+• Requests for gift cards or unusual payments
+
+[b]Stay Safe:[/b]
+Be suspicious of offers that seem too good to be true. Verify the person or organization before sending money or providing personal information.
+
+[center][font_size=18][b]STOP. THINK. VERIFY.[/b][/font_size][/center]"
+
+[node name="Dialogue" type="CanvasLayer" parent="." unique_id=555916456]
+script = ExtResource("8_uphns")
+
+[node name="DialogueBackground1" type="ColorRect" parent="Dialogue" unique_id=117487005]
+offset_left = 43.0
+offset_top = 387.99997
+offset_right = 83.0
+offset_bottom = 427.99997
+scale = Vector2(20.540058, 4.4579587)
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="DialogueBackground2" type="ColorRect" parent="Dialogue" unique_id=1838217543]
+offset_left = 47.999996
+offset_top = 397.0
+offset_right = 88.0
+offset_bottom = 437.0
+scale = Vector2(20.074894, 3.987688)
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="DialogueBackground3" type="ColorRect" parent="Dialogue" unique_id=1645673220]
+offset_left = 355.0
+offset_top = 532.0
+offset_right = 395.0
+offset_bottom = 572.0
+scale = Vector2(12.405854, 0.62928)
+color = Color(0.24115604, 0.24115604, 0.24115601, 1)
+
+[node name="Background" type="NinePatchRect" parent="Dialogue" unique_id=399710062]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TypeTimer" type="Timer" parent="Dialogue" unique_id=1023861150]
+wait_time = 0.04
+autostart = true
+
+[node name="PauseTimer" type="Timer" parent="Dialogue" unique_id=1022383718]
+one_shot = true
+
+[node name="PauseCalculator" type="Node" parent="Dialogue" unique_id=1732511316]
+script = ExtResource("9_tkmog")
+
+[node name="Content" type="RichTextLabel" parent="Dialogue" unique_id=1870867803]
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 850.0
+offset_bottom = 550.0
+bbcode_enabled = true
+text = "Hello! I am your instructor!"
+
+[node name="DialogueNameBackground1" type="ColorRect" parent="Dialogue" unique_id=1295029857]
+offset_left = 43.0
+offset_top = 362.0
+offset_right = 83.0
+offset_bottom = 402.0
+scale = Vector2(2.959863, 0.73490936)
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="DialogueNameBackground2" type="ColorRect" parent="Dialogue" unique_id=250546153]
+offset_left = 49.0
+offset_top = 365.0
+offset_right = 89.0
+offset_bottom = 405.0
+scale = Vector2(2.556564, 0.5740744)
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="DialogueNameBackground3" type="ColorRect" parent="Dialogue" unique_id=875476847]
+offset_left = 104.0
+offset_top = 383.0
+offset_right = 144.0
+offset_bottom = 423.0
+scale = Vector2(1.1681899, 0.13556592)
+color = Color(0.27752772, 0.27752772, 0.27752772, 1)
+
+[node name="Instructor" type="Label" parent="Dialogue" unique_id=283440312]
+offset_left = 61.0
+offset_top = 362.0
+offset_right = 139.0
+offset_bottom = 385.0
+text = "Instructor"
