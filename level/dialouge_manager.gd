@@ -1,10 +1,14 @@
 extends Node
 
-var dialogue = null
-var intro_camera: Camera3D = null
-var tv_camera_target: Marker3D = null
+@onready var dialogue = $"../Dialogue"
+@onready var intro_camera: Camera3D = \
+	$"../Level/IntroCamera2"
+@onready var tv_camera: Camera3D = \
+	$"../Level/TVCameraTarget2/TVPreviewCamera"
+@onready var tv_menu = $"../TVMenu"
+@onready var intro_controller = $"../Level/IntroController2"
 
-var messages = [
+var messages: Array[String] = [
 	"Welcome to CyberQuest.",
 	"Before we begin, let's go over some cybersecurity basics.",
 	"Cybersecurity is about protecting devices, accounts, and information from unauthorized access.",
@@ -12,126 +16,64 @@ var messages = [
 	"You should also be careful with suspicious links, emails, and messages.",
 	"Now let's put what you've learned into practice."
 ]
-
-var current_message := 0
-var conversation_active := false
-
+var current_message: int = 0
+var conversation_active: bool = false
+var ending_sequence_started: bool = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	set_process_input(true)
-
-	dialogue = find_dialogue_node(get_tree().current_scene)
-
-	intro_camera = get_tree().current_scene.find_child(
-		"IntroCamera",
-		true,
-		false
-	) as Camera3D
-
-	tv_camera_target = get_tree().current_scene.find_child(
-		"TVCameraTarget",
-		true,
-		false
-	) as Marker3D
-
-
-	if dialogue == null:
-		push_error("Could not find Dialogue.")
-		return
-
-	if intro_camera == null:
-		push_error("Could not find IntroCamera.")
-		return
-
-	if tv_camera_target == null:
-		push_error("Could not find TVCameraTarget.")
-		return
-
-
+	dialogue.message_completed.connect(
+		_on_dialogue_message_completed
+	)
+	tv_menu.hide_tv_menu()
 	intro_camera.make_current()
-
 	start_conversation(messages)
 
-
-func _input(event: InputEvent) -> void:
-	if get_tree().paused:
-		return
-
+func _on_dialogue_message_completed() -> void:
 	if not conversation_active:
 		return
-
-	if event is InputEventKey:
-		if event.pressed and not event.echo:
-			if (
-				event.keycode == KEY_SPACE
-				or event.physical_keycode == KEY_SPACE
-			):
-				advance_dialogue()
-
+	advance_dialogue()
 
 func advance_dialogue() -> void:
 	current_message += 1
-
 	if current_message < messages.size():
-		dialogue.update_message(messages[current_message])
+		dialogue.update_message(
+			messages[current_message]
+		)
 	else:
 		end_conversation()
 
-
-func start_conversation(new_messages: Array) -> void:
+func start_conversation(
+	new_messages: Array[String]
+) -> void:
+	if new_messages.is_empty():
+		return
 	messages = new_messages
 	current_message = 0
 	conversation_active = true
-
+	ending_sequence_started = false
 	dialogue.show()
-	dialogue.update_message(messages[0])
-
+	dialogue.update_message(
+		messages[current_message]
+	)
 
 func end_conversation() -> void:
+	if ending_sequence_started:
+		return
+
+	ending_sequence_started = true
 	conversation_active = false
+
 	dialogue.hide()
 
-	move_camera_to_tv()
+	print("Dialogue finished.")
 
+	await intro_controller.move_camera_to_tv()
 
-func move_camera_to_tv() -> void:
-	intro_camera.make_current()
+	print("Camera zoom finished.")
 
-	var tween := create_tween()
+	await get_tree().create_timer(0.3).timeout
 
-	tween.set_parallel(true)
+	print("Starting TV menu.")
 
-	tween.tween_property(
-		intro_camera,
-		"global_position",
-		tv_camera_target.global_position,
-		2.0
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	tween.tween_property(
-		intro_camera,
-		"global_rotation",
-		tv_camera_target.global_rotation,
-		2.0
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	await tween.finished
-
-	print("Camera reached TV.")
-
-
-func find_dialogue_node(node: Node):
-	if (
-		node.has_method("update_message")
-		and node.has_method("message_is_fully_visible")
-	):
-		return node
-
-	for child in node.get_children():
-		var result = find_dialogue_node(child)
-
-		if result != null:
-			return result
-
-	return null
+	tv_menu.start_tv_sequence()

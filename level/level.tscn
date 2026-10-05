@@ -14,9 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dbyqinoqfyusi" path="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/classroom_demoscene.fbx" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://dornw3sygguqy" path="res://level/StylooClassroomAssetPack GLTF & FBX/computer/FBX/COMPUTERdemoscene.fbx" id="13_m3nah"]
 [ext_resource type="PackedScene" uid="uid://uywlm4hhsl2m" path="res://level/StylooClassroomAssetPack GLTF & FBX/computer/FBX/COMPUTERchair.fbx" id="14_fm1jd"]
-[ext_resource type="PackedScene" uid="uid://cl8rh7i7gg8ma" path="res://main/scenes/dialouge.tscn" id="15_fm1jd"]
-[ext_resource type="Script" uid="uid://bw3i6imxrdk7s" path="res://level/dialouge_manager.gd" id="16_7jqyl"]
-[ext_resource type="Script" uid="uid://b1gjktfnr3e7s" path="res://level/intro_controller.gd" id="17_m5ivw"]
 
 [sub_resource type="Curve" id="Curve_k4wis"]
 _data = [Vector2(0.331719, 0.0391753), 0.0, 0.0, 0, 0, Vector2(0.697336, 1), 0.51276, 0.0, 0, 0]
@@ -340,17 +337,6 @@ polygon = PackedVector2Array(0, 0, 3, 2, 3, 0)
 depth = 4.0
 material = ExtResource("7_njuj4")
 
-[node name="Dialouge" parent="." unique_id=753022492 instance=ExtResource("15_fm1jd")]
-
-[node name="DialougeManager" type="Node" parent="." unique_id=1930811973]
-script = ExtResource("16_7jqyl")
-
-[node name="TVCameraTarget" type="Marker3D" parent="." unique_id=2007009818]
-transform = Transform3D(-0.8497881, 0, -0.52712446, 0, 1, 0, 0.52712446, 0, -0.8497881, 17.751545, 2.0941846, 2.7353559)
-
-[node name="TVPreviewCamera" type="Camera3D" parent="TVCameraTarget" unique_id=1964139154]
-transform = Transform3D(0.9315544, 0, 0.36360222, 0, 1, 0, -0.36360222, 0, 0.9315544, 0, 0, 0)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=277300386]
 transform = Transform3D(0.31341666, 0, 0, 0, 7.817899, 0, 0, 0, 21.506784, 8.73148, 0, 0)
 mesh = SubResource("BoxMesh_muuit")
@@ -365,13 +351,6 @@ mesh = SubResource("BoxMesh_muuit")
 
 [node name="SpawnPoint" type="Marker3D" parent="." unique_id=1035230487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.42694, 0.59498584, 0)
-
-[node name="IntroController" type="Node" parent="." unique_id=1226057389]
-script = ExtResource("17_m5ivw")
-
-[node name="IntroCamera" type="Camera3D" parent="." unique_id=1210769717]
-transform = Transform3D(-0.9306391, 0.05733444, -0.36141902, -0.0038498936, 0.9860611, 0.16633913, 0.36591822, 0.1561931, -0.91744626, 14.654698, 2.1358182, -1.0858417)
-current = true
 
 [editable path="CSGCombiner3D/classroom_demoscene"]
 [editable path="CSGCombiner3D/COMPUTERchair"]

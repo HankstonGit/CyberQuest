@@ -1,65 +1,63 @@
 extends Node
 
+signal camera_move_finished
+
 @export var camera_move_time := 2.0
 
-var dialogue_manager: Node = null
-var player_camera: Camera3D = null
-var tv_camera_target: Marker3D = null
+@onready var player_camera: Camera3D = $"../IntroCamera2"
+@onready var tv_camera: Camera3D = $"../TVCameraTarget2/TVPreviewCamera"
 
-
-func _ready() -> void:
-	dialogue_manager = get_tree().current_scene.find_child(
-		"DialogueManager",
-		true,
-		false
-	)
-
-	tv_camera_target = get_tree().current_scene.find_child(
-		"TVCameraTarget",
-		true,
-		false
-	)
-
-	player_camera = get_viewport().get_camera_3d()
-
-
-	if dialogue_manager == null:
-		push_error("IntroController could not find DialogueManager.")
-		return
-
-	if tv_camera_target == null:
-		push_error("IntroController could not find TVCameraTarget.")
-		return
-
-	if player_camera == null:
-		push_error("IntroController could not find the active Camera3D.")
-		return
-
-
-	dialogue_manager.conversation_finished.connect(
-		_on_conversation_finished
-	)
-
-
-func _on_conversation_finished() -> void:
-	move_camera_to_tv()
+var camera_tween: Tween = null
 
 
 func move_camera_to_tv() -> void:
-	var tween := create_tween()
+	if camera_tween != null:
+		camera_tween.kill()
 
-	tween.set_parallel(true)
+	player_camera.make_current()
 
-	tween.tween_property(
+	camera_tween = create_tween()
+	camera_tween.set_parallel(true)
+
+	camera_tween.tween_property(
 		player_camera,
 		"global_position",
-		tv_camera_target.global_position,
+		tv_camera.global_position,
 		camera_move_time
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	).set_trans(
+		Tween.TRANS_SINE
+	).set_ease(
+		Tween.EASE_IN_OUT
+	)
 
-	tween.tween_property(
+	camera_tween.tween_property(
 		player_camera,
 		"global_rotation",
-		tv_camera_target.global_rotation,
+		tv_camera.global_rotation,
 		camera_move_time
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	).set_trans(
+		Tween.TRANS_SINE
+	).set_ease(
+		Tween.EASE_IN_OUT
+	)
+
+	camera_tween.tween_property(
+		player_camera,
+		"fov",
+		tv_camera.fov,
+		camera_move_time
+	).set_trans(
+		Tween.TRANS_SINE
+	).set_ease(
+		Tween.EASE_IN_OUT
+	)
+
+	await camera_tween.finished
+
+	player_camera.global_position = tv_camera.global_position
+	player_camera.global_rotation = tv_camera.global_rotation
+	player_camera.fov = tv_camera.fov
+
+	player_camera.make_current()
+
+	camera_move_finished.emit()

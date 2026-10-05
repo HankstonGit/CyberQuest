@@ -1,10 +1,8 @@
 extends CanvasLayer
 
-@export var dialogue_controller: Node
 @export var blink_speed: float = 0.12
-
+@export var menu_wait_time: float = 6.0
 var sequence_started: bool = false
-
 @onready var blink_1: ColorRect = $Blink1
 @onready var blink_2: ColorRect = $Blink2
 @onready var blink_3: ColorRect = $Blink3
@@ -16,39 +14,66 @@ var sequence_started: bool = false
 @onready var under_welcome_2 = $UnderWelcome2
 @onready var under_welcome = $UnderWelcome
 @onready var rich_text_label = $RichTextLabel
-@onready var scam_button: BaseButton = $BoxContainer/VBoxContainer/Scam
-@onready var malware_button: BaseButton = $BoxContainer/VBoxContainer/Malware
-@onready var phishing_button: BaseButton = $BoxContainer/VBoxContainer/Phishing
-@onready var social_engineering_button: BaseButton = $"BoxContainer/VBoxContainer/Social Engineering"
+@onready var scam_button: BaseButton = \
+	$BoxContainer/VBoxContainer/Scam
+@onready var malware_button: BaseButton = \
+	$BoxContainer/VBoxContainer/Malware
+@onready var phishing_button: BaseButton = \
+	$BoxContainer/VBoxContainer/Phishing
+@onready var social_engineering_button: BaseButton = \
+	$"BoxContainer/VBoxContainer/Social Engineering"
 @onready var hover_scam: ColorRect = $HoverScam
 @onready var hover_malware: ColorRect = $HoverMalware
 @onready var hover_phishing: ColorRect = $HoverPhishing
-@onready var hover_social_engineering: ColorRect = $HoverSocialEngineering
+@onready var hover_social_engineering: ColorRect = \
+	$HoverSocialEngineering
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	sequence_started = false
 	_hide_blinks()
 	_hide_hover_effects()
 	_set_menu_visible(false)
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	if dialogue_controller:
-		dialogue_controller.dialogue_completed.connect(_on_dialogue_completed)
-	scam_button.mouse_entered.connect(_on_scam_hovered)
-	scam_button.mouse_exited.connect(_on_button_exited)
-	malware_button.mouse_entered.connect(_on_malware_hovered)
-	malware_button.mouse_exited.connect(_on_button_exited)
-	phishing_button.mouse_entered.connect(_on_phishing_hovered)
-	phishing_button.mouse_exited.connect(_on_button_exited)
-	social_engineering_button.mouse_entered.connect(_on_social_engineering_hovered)
-	social_engineering_button.mouse_exited.connect(_on_button_exited)
+	Input.set_mouse_mode(
+		Input.MOUSE_MODE_HIDDEN
+	)
+	scam_button.mouse_entered.connect(
+		_on_scam_hovered
+	)
+	scam_button.mouse_exited.connect(
+		_on_button_exited
+	)
+	malware_button.mouse_entered.connect(
+		_on_malware_hovered
+	)
+	malware_button.mouse_exited.connect(
+		_on_button_exited
+	)
+	phishing_button.mouse_entered.connect(
+		_on_phishing_hovered
+	)
+	phishing_button.mouse_exited.connect(
+		_on_button_exited
+	)
+	social_engineering_button.mouse_entered.connect(
+		_on_social_engineering_hovered
+	)
+	social_engineering_button.mouse_exited.connect(
+		_on_button_exited
+	)
 
-func _on_dialogue_completed() -> void:
-	start_tv_sequence()
 
 func start_tv_sequence() -> void:
+	print("TVMenu: start_tv_sequence() WAS CALLED")
+	print_stack()
 	if sequence_started:
 		return
+	await get_tree().create_timer(menu_wait_time).timeout
 	sequence_started = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	print("TVMenu: boot sequence starting.")
+	Input.set_mouse_mode(
+		Input.MOUSE_MODE_HIDDEN
+	)
 	_set_menu_visible(false)
 	_hide_blinks()
 	await _show_blink(blink_1)
@@ -56,13 +81,15 @@ func start_tv_sequence() -> void:
 	await _show_blink(blink_3)
 	await _show_blink(blink_4)
 	_hide_blinks()
-	_set_menu_visible(true)
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	print("TVMenu: showing menu.")
+	show_tv_menu()
 
 func _show_blink(blink: ColorRect) -> void:
 	_hide_blinks()
 	blink.show()
-	await get_tree().create_timer(blink_speed).timeout
+	await get_tree().create_timer(
+		blink_speed
+	).timeout
 
 func _hide_blinks() -> void:
 	blink_1.hide()
@@ -80,6 +107,20 @@ func _set_menu_visible(value: bool) -> void:
 	rich_text_label.visible = value
 	if not value:
 		_hide_hover_effects()
+
+func hide_tv_menu() -> void:
+	_set_menu_visible(false)
+	_hide_blinks()
+	_hide_hover_effects()
+	Input.set_mouse_mode(
+		Input.MOUSE_MODE_HIDDEN
+	)
+
+func show_tv_menu() -> void:
+	_set_menu_visible(true)
+	Input.set_mouse_mode(
+		Input.MOUSE_MODE_VISIBLE
+	)
 
 func _hide_hover_effects() -> void:
 	hover_scam.hide()

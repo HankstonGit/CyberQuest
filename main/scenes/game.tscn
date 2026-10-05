@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://b1p1lnectvs25" path="res://main/script/game.gd" id="1_1il7v"]
 [ext_resource type="PackedScene" uid="uid://b1ot6gn6tms6h" path="res://lesson_reference/player_3d_template.tscn" id="1_w0p8v"]
 [ext_resource type="Script" uid="uid://e477l5rmvo85" path="res://main/script/free_camera.gd" id="5_5y4mc"]
+[ext_resource type="Script" uid="uid://b1gjktfnr3e7s" path="res://level/intro_controller.gd" id="5_ks0b4"]
 [ext_resource type="PackedScene" uid="uid://cav7phicrruch" path="res://UI/scenes/settings.tscn" id="6_vu1ds"]
 [ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="7_2frud"]
 [ext_resource type="Script" uid="uid://gsd83myw1qhb" path="res://main/script/tv_menu.gd" id="7_hrike"]
 [ext_resource type="Script" uid="uid://ke2fsjgipmjl" path="res://main/script/dialouge.gd" id="8_uphns"]
 [ext_resource type="Script" uid="uid://dpgbgjs12gltx" path="res://main/script/pause_calculator.gd" id="9_tkmog"]
+[ext_resource type="Script" uid="uid://bw3i6imxrdk7s" path="res://level/dialouge_manager.gd" id="10_tkmog"]
 [ext_resource type="PackedScene" uid="uid://bxg6oejpaitdt" path="res://level/interactable/flag/flag_reached_screen.tscn" id="19_cpgj4"]
 
 [node name="Game" type="Node" unique_id=1923663789]
@@ -21,6 +23,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43638, 0, -7.8513)
 [node name="Level" parent="." unique_id=730150491 instance=ExtResource("7_2frud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.4)
 
+[node name="IntroController2" type="Node" parent="Level" unique_id=398085713]
+script = ExtResource("5_ks0b4")
+
+[node name="IntroCamera2" type="Camera3D" parent="Level" unique_id=2029274590]
+transform = Transform3D(-0.9306391, 0.05733444, -0.36141902, -0.0038498936, 0.9860611, 0.16633913, 0.36591822, 0.1561931, -0.91744626, 14.654698, 2.1358182, -1.0858417)
+current = true
+
+[node name="TVCameraTarget2" type="Marker3D" parent="Level" unique_id=1383342389]
+transform = Transform3D(-0.8497881, 0, -0.52712446, 0, 1, 0, 0.52712446, 0, -0.8497881, 17.751545, 2.0941846, 2.7353559)
+
+[node name="TVPreviewCamera" type="Camera3D" parent="Level/TVCameraTarget2" unique_id=1781533875]
+transform = Transform3D(0.9999281, 0, 0.012000322, 0, 1, 0, -0.012000322, 0, 0.9999281, 0.015213013, -0.044859886, -0.0039024353)
+
 [node name="FreelookCamera3D" type="Camera3D" parent="." unique_id=2105549810]
 script = ExtResource("5_5y4mc")
 
@@ -29,9 +44,9 @@ visible = false
 
 [node name="Settings" parent="PauseLayer" unique_id=1415771578 instance=ExtResource("6_vu1ds")]
 
-[node name="TVMenu" type="CanvasLayer" parent="." unique_id=1291845950 node_paths=PackedStringArray("dialogue_controller")]
+[node name="TVMenu" type="CanvasLayer" parent="." unique_id=1291845950]
 script = ExtResource("7_hrike")
-dialogue_controller = NodePath("../Dialogue")
+menu_wait_time = 0.0
 
 [node name="Blink1" type="ColorRect" parent="TVMenu" unique_id=845603659]
 visible = false
@@ -314,3 +329,6 @@ offset_top = 362.0
 offset_right = 139.0
 offset_bottom = 385.0
 text = "Instructor"
+
+[node name="DialougeManager" type="Node" parent="." unique_id=1194347204]
+script = ExtResource("10_tkmog")
