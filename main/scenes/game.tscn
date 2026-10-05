@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.4)
 script = ExtResource("5_ks0b4")
 
 [node name="IntroCamera2" type="Camera3D" parent="Level" unique_id=2029274590]
-transform = Transform3D(-0.9306391, 0.05733444, -0.36141902, -0.0038498936, 0.9860611, 0.16633913, 0.36591822, 0.1561931, -0.91744626, 14.654698, 2.1358182, -1.0858417)
+transform = Transform3D(-0.5193025, 0.14018106, -0.843015, -0.0038498824, 0.9860611, 0.16633911, 0.8545819, 0.08962581, -0.51152426, 14.12681, 1.6034544, -0.32465363)
 current = true
 
 [node name="TVCameraTarget2" type="Marker3D" parent="Level" unique_id=1383342389]
@@ -175,69 +175,69 @@ offset_bottom = 152.0
 scale = Vector2(15.081519, 0.45081556)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TVMenu" unique_id=2009573859]
-offset_left = 447.0
-offset_top = 347.0
-offset_right = 487.0
-offset_bottom = 387.0
+offset_left = 66.0
+offset_top = 203.0
+offset_right = 666.0
+offset_bottom = 553.0
 bbcode_enabled = true
-text = "[center][font_size=28][b]CYBER SECURITY BASICS[/b][/font_size][/center]
+text = "CYBER SECURITY BASICS
 
-[font_size=22][b]MALWARE[/b][/font_size]
+MALWARE
 
 Malware is malicious software designed to damage, disrupt, spy on, or gain unauthorized access to a computer or network.
 
 Common types include viruses, ransomware, spyware, worms, and trojans.
 
-[b]Warning Signs:[/b]
+Warning Signs:
 • Unexpected pop-ups or programs
 • Slow computer performance
 • Files becoming corrupted or encrypted
 • Antivirus software being disabled unexpectedly
 
-[b]Stay Safe:[/b]
+Stay Safe:
 Keep your software updated, use trusted antivirus protection, and avoid downloading unknown files or programs.
 
 
-[font_size=22][b]SOCIAL ENGINEERING[/b][/font_size]
+SOCIAL ENGINEERING
 
 Social engineering is when an attacker manipulates a person into revealing information or performing an unsafe action.
 
 Instead of attacking a computer directly, the attacker targets human trust, fear, curiosity, or urgency.
 
-[b]Common Tactics:[/b]
+Common Tactics:
 • Pretending to be a trusted person or company
 • Creating a fake emergency
 • Asking for passwords or verification codes
 • Offering fake rewards or prizes
 
-[b]Stay Safe:[/b]
+Stay Safe:
 Verify who you are communicating with before sharing information. Do not let urgency pressure you into making a quick decision.
 
 
-[font_size=22][b]PHISHING[/b][/font_size]
+PHISHING
 
 Phishing is a type of social engineering where attackers send fake emails, messages, or websites designed to steal information.
 
 Attackers may pretend to be banks, schools, employers, delivery companies, or other trusted organizations.
 
-[b]Warning Signs:[/b]
+Warning Signs:
 • Suspicious links
 • Unexpected attachments
 • Misspelled website addresses
 • Requests for passwords or personal information
 • Messages claiming immediate action is required
 
-[b]Stay Safe:[/b]
+Stay Safe:
 Do not click suspicious links. Visit official websites directly and verify unexpected messages through another trusted method.
 
 
-[font_size=22][b]SCAMS[/b][/font_size]
+SCAMS
 
 A scam is a dishonest scheme designed to trick someone into giving away money, information, accounts, or other valuable resources.
 
 Scams can happen through websites, email, social media, phone calls, text messages, and even online games.
 
-[b]Common Scams:[/b]
+Common Scams:
 • Fake giveaways
 • Fake technical support
 • Investment scams
@@ -245,41 +245,45 @@ Scams can happen through websites, email, social media, phone calls, text messag
 • Fake online stores
 • Requests for gift cards or unusual payments
 
-[b]Stay Safe:[/b]
+Stay Safe:
 Be suspicious of offers that seem too good to be true. Verify the person or organization before sending money or providing personal information.
 
-[center][font_size=18][b]STOP. THINK. VERIFY.[/b][/font_size][/center]"
+
+STOP. THINK. VERIFY."
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=555916456]
 script = ExtResource("8_uphns")
 
 [node name="DialogueBackground1" type="ColorRect" parent="Dialogue" unique_id=117487005]
-offset_left = 43.0
-offset_top = 387.99997
-offset_right = 83.0
-offset_bottom = 427.99997
-scale = Vector2(20.540058, 4.4579587)
+offset_left = 119.0
+offset_top = 424.99997
+offset_right = 159.0
+offset_bottom = 464.99997
+scale = Vector2(19.61851, 3.9533815)
 color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
 [node name="DialogueBackground2" type="ColorRect" parent="Dialogue" unique_id=1838217543]
-offset_left = 47.999996
-offset_top = 397.0
-offset_right = 88.0
-offset_bottom = 437.0
-scale = Vector2(20.074894, 3.987688)
+offset_left = 124.0
+offset_top = 434.0
+offset_right = 164.0
+offset_bottom = 474.0
+scale = Vector2(19.174215, 3.5363388)
 color = Color(0.5132329, 0.5132329, 0.5132329, 1)
 
 [node name="DialogueBackground3" type="ColorRect" parent="Dialogue" unique_id=1645673220]
-offset_left = 355.0
-offset_top = 532.0
-offset_right = 395.0
-offset_bottom = 572.0
-scale = Vector2(12.405854, 0.62928)
+offset_left = 416.0
+offset_top = 553.0
+offset_right = 456.0
+offset_bottom = 593.0
+scale = Vector2(11.849255, 0.55805445)
 color = Color(0.24115604, 0.24115604, 0.24115601, 1)
 
 [node name="Background" type="NinePatchRect" parent="Dialogue" unique_id=399710062]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 76.0
+offset_top = 37.0
+offset_right = 116.0
+offset_bottom = 77.0
+scale = Vector2(0.9551341, 0.8868143)
 
 [node name="TypeTimer" type="Timer" parent="Dialogue" unique_id=1023861150]
 wait_time = 0.04
@@ -292,43 +296,50 @@ one_shot = true
 script = ExtResource("9_tkmog")
 
 [node name="Content" type="RichTextLabel" parent="Dialogue" unique_id=1870867803]
-offset_left = 50.0
-offset_top = 400.0
-offset_right = 850.0
-offset_bottom = 550.0
+offset_left = 126.0
+offset_top = 437.0
+offset_right = 926.0
+offset_bottom = 587.0
+scale = Vector2(0.9551341, 0.8868143)
 bbcode_enabled = true
 text = "Hello! I am your instructor!"
 
 [node name="DialogueNameBackground1" type="ColorRect" parent="Dialogue" unique_id=1295029857]
-offset_left = 43.0
-offset_top = 362.0
-offset_right = 83.0
-offset_bottom = 402.0
-scale = Vector2(2.959863, 0.73490936)
+offset_left = 119.0
+offset_top = 399.0
+offset_right = 159.0
+offset_bottom = 439.0
+scale = Vector2(2.827066, 0.6517281)
 color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
 [node name="DialogueNameBackground2" type="ColorRect" parent="Dialogue" unique_id=250546153]
-offset_left = 49.0
-offset_top = 365.0
-offset_right = 89.0
-offset_bottom = 405.0
-scale = Vector2(2.556564, 0.5740744)
+offset_left = 125.0
+offset_top = 402.0
+offset_right = 165.0
+offset_bottom = 442.0
+scale = Vector2(2.4418616, 0.5090974)
 color = Color(0.5132329, 0.5132329, 0.5132329, 1)
 
 [node name="DialogueNameBackground3" type="ColorRect" parent="Dialogue" unique_id=875476847]
-offset_left = 104.0
-offset_top = 383.0
-offset_right = 144.0
-offset_bottom = 423.0
-scale = Vector2(1.1681899, 0.13556592)
+offset_left = 178.0
+offset_top = 417.0
+offset_right = 218.0
+offset_bottom = 457.0
+scale = Vector2(1.115778, 0.12022181)
 color = Color(0.27752772, 0.27752772, 0.27752772, 1)
 
 [node name="Instructor" type="Label" parent="Dialogue" unique_id=283440312]
-offset_left = 61.0
-offset_top = 362.0
-offset_right = 139.0
-offset_bottom = 385.0
+offset_left = 137.0
+offset_top = 399.0
+offset_right = 215.0
+offset_bottom = 422.0
+scale = Vector2(0.9551341, 0.8868143)
 text = "Instructor"
 
 [node name="DialougeManager" type="Node" parent="." unique_id=1194347204]
 script = ExtResource("10_tkmog")
+
+[connection signal="pressed" from="TVMenu/BoxContainer/VBoxContainer/Scam" to="." method="_on_scam_pressed"]
+[connection signal="pressed" from="TVMenu/BoxContainer/VBoxContainer/Malware" to="." method="_on_malware_pressed"]
+[connection signal="pressed" from="TVMenu/BoxContainer/VBoxContainer/Phishing" to="." method="_on_phishing_pressed"]
+[connection signal="pressed" from="TVMenu/BoxContainer/VBoxContainer/Social Engineering" to="." method="_on_social_engineering_pressed"]

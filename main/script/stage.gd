@@ -1,7 +1,7 @@
 extends Node3D 
  
 const SOPHIA_SCENE: PackedScene = preload( 
-	"res://main/player/sophia_skin/sophia_skin.tscn" 
+	"res://main/player/sophia_skin.tscn" 
 ) 
 const CYBERPEST_SCENE: PackedScene = preload(
 	"res://main/characters/cyber_pest.tscn"
@@ -19,7 +19,6 @@ const CYBERPEST_SCENE: PackedScene = preload(
 @export var camera_switch_time: float = 5.0 
 @export var camera_move_distance: float = 0.5
 @export var camera_move_speed: float = 0.4
- 
 var battle_cameras: Array[Camera3D] = [] 
 var current_camera_index: int = 0 
 var camera_start_positions: Array[Vector3] = []
@@ -30,6 +29,7 @@ func _ready() -> void:
 	settings_layer.hide()
 	settings_menu.hide()
 	battle_ui.show()
+	setup_battle_topic()
 	spawn_battle()
 	setup_cameras()
  
@@ -75,6 +75,19 @@ func spawn_battle() -> void:
 	fighters.add_child(enemy)
 	enemy.global_transform = enemy_spawn.global_transform
  
+func setup_battle_topic() -> void:
+	match BattleData.selected_topic:
+		BattleData.Topic.SCAM:
+			print("Starting SCAM battle.")
+		BattleData.Topic.MALWARE:
+			print("Starting MALWARE battle.")
+		BattleData.Topic.PHISHING:
+			print("Starting PHISHING battle.")
+		BattleData.Topic.SOCIAL_ENGINEERING:
+			print("Starting SOCIAL ENGINEERING battle.")
+		_:
+			push_error("GenericStage: No battle topic selected.")
+
 func setup_cameras() -> void: 
 	battle_cameras = [ 
 		camera_behind, 

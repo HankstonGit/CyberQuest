@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnolqerbp2x01" path="res://main/script/stage.gd" id="1_sb126"]
 [ext_resource type="Texture2D" uid="uid://b3f6b7buhh8as" path="res://UI/assets/CyberPest2.webp" id="2_7yyro"]
+[ext_resource type="Script" uid="uid://4jimh08hrxcu" path="res://main/script/battle_ui.gd" id="2_c3l37"]
 [ext_resource type="Texture2D" uid="uid://c7itfbba1tdjk" path="res://UI/assets/Heart.webp" id="3_xktwa"]
 [ext_resource type="Texture2D" uid="uid://d3cf363ckedcg" path="res://UI/assets/CyberPest1.webp" id="4_tbpmu"]
 [ext_resource type="Texture2D" uid="uid://b4gxbag15ig7m" path="res://UI/assets/CyberPest3.webp" id="5_c3l37"]
@@ -112,6 +113,7 @@ transform = Transform3D(-0.7740723, 0, -0.63309723, 0, 1, 0, 0.63309723, 0, -0.7
 transform = Transform3D(0.9822001, -0.026324138, 0.18598397, -0.021012887, 0.968518, 0.24805506, -0.18665865, -0.24754775, 0.9507254, 2.201684, 1.3756709, 3.2532778)
 
 [node name="BattleUI" type="CanvasLayer" parent="." unique_id=984050138]
+script = ExtResource("2_c3l37")
 
 [node name="BattlePanel" type="Control" parent="BattleUI" unique_id=80239314]
 layout_mode = 3
@@ -230,6 +232,18 @@ offset_right = 351.0
 offset_bottom = 176.0
 theme_override_font_sizes/font_size = 12
 text = "Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. Over the tree is over the woods. "
+autowrap_mode = 2
+
+[node name="AnswerPreview" type="Label" parent="BattleUI/BattlePanel" unique_id=1060162734]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 175.0
+offset_right = 223.0
+offset_bottom = 222.0
+theme_override_colors/font_color = Color(1, 0.84313726, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Over the tree is over the woods. "
 autowrap_mode = 2
 
 [node name="Answers" type="GridContainer" parent="BattleUI/BattlePanel" unique_id=1551674432]
@@ -368,6 +382,7 @@ text = "You Lose"
 
 [node name="Settings" type="CanvasLayer" parent="." unique_id=527112962]
 process_mode = 3
+visible = false
 
 [node name="Settings" parent="Settings" unique_id=1415771578 instance=ExtResource("6_tbpmu")]
 process_mode = 2

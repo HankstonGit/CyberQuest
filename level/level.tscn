@@ -92,6 +92,9 @@ data = PackedVector3Array(-0.9795, 1.6147, 0.39609998, -0.97209996, 1.6147, 0.52
 
 [sub_resource type="BoxMesh" id="BoxMesh_muuit"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_m3nah"]
+size = Vector3(2.819275, 1, 1)
+
 [node name="Level" type="Node3D" unique_id=757561452]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=274499950]
@@ -350,7 +353,11 @@ transform = Transform3D(-0.0012290132, 0, -12.485625, -0.30973077, -0.121643245,
 mesh = SubResource("BoxMesh_muuit")
 
 [node name="SpawnPoint" type="Marker3D" parent="." unique_id=1035230487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.42694, 0.59498584, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.42694, 1.0385579, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=746986225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.575769, 0.28750944, 0)
+shape = SubResource("BoxShape3D_m3nah")
 
 [editable path="CSGCombiner3D/classroom_demoscene"]
 [editable path="CSGCombiner3D/COMPUTERchair"]
