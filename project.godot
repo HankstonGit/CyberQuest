@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="CyberQuest"
-run/main_scene="uid://dlg6imp4wrb24"
-config/features=PackedStringArray("4.6", "Mobile")
+run/main_scene="uid://4h5dur5io84i"
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.png"
 
 [audio]

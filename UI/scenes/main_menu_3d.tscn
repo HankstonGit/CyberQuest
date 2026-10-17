@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d1w0bm0tq1cel"]
+
+[ext_resource type="Script" uid="uid://d2ul6giqkvf3a" path="res://UI/scripts/MainMenu3d.gd" id="1_ulh0k"]
+[ext_resource type="AudioStream" uid="uid://dfd7gtcu8pis1" path="res://UI/assets/Menu_Button.mp3" id="2_tgjvp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x5rka"]
+
+[node name="MainMenu" type="Control" unique_id=721067494]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5298045, 0.5534202)
+script = ExtResource("1_ulh0k")
+
+[node name="CyberQiest" type="Label" parent="." unique_id=1372869621]
+layout_mode = 0
+offset_left = 802.1826
+offset_top = 359.5821
+offset_right = 1114.1826
+offset_bottom = 435.5821
+theme_override_colors/font_color = Color(0.95990497, 0, 0.09901873, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "CyberQuest"
+
+[node name="PlaceholderButtonBackground2" type="ColorRect" parent="." unique_id=2027748665]
+layout_mode = 0
+offset_left = 909.76953
+offset_top = 500.52383
+offset_right = 949.76953
+offset_bottom = 540.52386
+scale = Vector2(3.330284, 4.721781)
+
+[node name="PlaceholderButtonBackground" type="ColorRect" parent="." unique_id=1805147065]
+layout_mode = 0
+offset_left = 902.21954
+offset_top = 498.71692
+offset_right = 942.21954
+offset_bottom = 538.7169
+scale = Vector2(3.3563864, 4.6018004)
+color = Color(0.8685599, 0, 0.09697836, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=730987046]
+layout_mode = 0
+offset_left = 907.8821
+offset_top = 504.13776
+offset_right = 977.8821
+offset_bottom = 605.13776
+scale = Vector2(1.6670145, 1.6713505)
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2090899770]
+layout_mode = 2
+text = "Play"
+icon = SubResource("CanvasTexture_x5rka")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=88713843]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1749836755]
+layout_mode = 2
+text = "Quit"
+
+[node name="MenuButton" type="AudioStreamPlayer" parent="." unique_id=855834331]
+stream = ExtResource("2_tgjvp")
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

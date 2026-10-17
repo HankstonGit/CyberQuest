@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://4h5dur5io84i"]
+
+[ext_resource type="PackedScene" uid="uid://dornw3sygguqy" path="res://level/StylooClassroomAssetPack GLTF & FBX/computer/FBX/COMPUTERdemoscene.fbx" id="1_kor3b"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://main/player/sophia_skin/sophia_skin.tscn" id="2_yu7ca"]
+[ext_resource type="PackedScene" uid="uid://d1w0bm0tq1cel" path="res://UI/scenes/main_menu_3d.tscn" id="3_73wxx"]
+
+[node name="MainMenuWorld" type="Node" unique_id=1839974297]
+
+[node name="MenuBackground3D" type="Node3D" parent="." unique_id=651847241]
+
+[node name="MenuCamera" type="Camera3D" parent="MenuBackground3D" unique_id=737838625]
+transform = Transform3D(-0.02311046, 0.32457817, -0.9455765, 0.025677973, 0.9457098, 0.32399634, 0.9994031, -0.016792784, -0.030190296, -0.004357815, 1.4255548, -0.27517748)
+
+[node name="COMPUTERdemoscene" parent="MenuBackground3D" unique_id=1989971447 instance=ExtResource("1_kor3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58004403, 0, -1.5619493)
+
+[node name="MenuLight" type="DirectionalLight3D" parent="MenuBackground3D" unique_id=1168456701]
+transform = Transform3D(-0.6657813, 0.178182, -0.7245595, -0.63978946, 0.36333975, 0.6772398, 0.3839332, 0.9144591, -0.12790585, -3.679919, 4.1790466, 0.07203853)
+light_energy = 2.0
+
+[node name="SophiaSkin" parent="MenuBackground3D" unique_id=71180830 instance=ExtResource("2_yu7ca")]
+transform = Transform3D(0.64388865, 0, -0.7651192, 0, 1, 0, 0.7651192, 0, 0.64388865, 0.6127753, 0, -0.8917576)
+
+[node name="MainMenu" parent="." unique_id=721067494 instance=ExtResource("3_73wxx")]
+offset_left = 381.0
+offset_top = -15.0
+offset_right = 381.0
+offset_bottom = -15.0
