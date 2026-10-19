@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3cf363ckedcg" path="res://UI/assets/CyberPest1.webp" id="4_tbpmu"]
 [ext_resource type="Texture2D" uid="uid://b4gxbag15ig7m" path="res://UI/assets/CyberPest3.webp" id="5_c3l37"]
 [ext_resource type="PackedScene" uid="uid://cav7phicrruch" path="res://UI/scenes/settings.tscn" id="6_tbpmu"]
+[ext_resource type="AudioStream" uid="uid://bd8olxuw4u3ig" path="res://main/assets/Battle_v1.mp3" id="8_t55tt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypubd"]
 albedo_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
@@ -356,6 +357,13 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Double or Nothing?"
 
+[node name="Beat" type="ColorRect" parent="BattleUI" unique_id=1754957305]
+offset_left = 27.0
+offset_top = 19.0
+offset_right = 999.0
+offset_bottom = 581.0
+color = Color(0.09951428, 0.09098611, 0.020154012, 1)
+
 [node name="Victory" type="Label" parent="BattleUI" unique_id=497081364]
 visible = false
 offset_left = 431.0
@@ -386,3 +394,9 @@ visible = false
 
 [node name="Settings" parent="Settings" unique_id=1415771578 instance=ExtResource("6_tbpmu")]
 process_mode = 2
+
+[node name="BattleV1" type="AudioStreamPlayer" parent="." unique_id=754077614]
+stream = ExtResource("8_t55tt")
+volume_db = -18.246
+pitch_scale = 0.75
+autoplay = true

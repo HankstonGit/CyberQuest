@@ -19,6 +19,7 @@ extends CanvasLayer
 	$BattlePanel/Answers/Button4
 @onready var victory_label: Label = $Victory
 @onready var defeat_label: Label = $Defeat
+@onready var beat: ColorRect = $Beat
 @onready var answer_preview: Label = $BattlePanel/AnswerPreview
 var answer_buttons: Array[Button] = []
 var player_hp: int = 3
@@ -78,6 +79,7 @@ func _ready() -> void:
 	)
 	victory_label.hide()
 	defeat_label.hide()
+	beat.hide()
 	setup_battle()
 
 func _on_answer_hovered(index: int) -> void:
@@ -207,8 +209,15 @@ func win_battle() -> void:
 	disable_answers()
 	enemy_hp_value = 0
 	enemy_hp.value = 0
+	beat.show()
 	victory_label.show()
+	victory_label.move_to_front()
+	BattleData.complete_topic(
+		BattleData.selected_topic
+	)
+	await get_tree().create_timer(5.0).timeout
 	BattleData.clear_selected_topic()
+	BattleData.return_to_tv()
 
 func lose_battle() -> void:
 	battle_finished = true
@@ -216,7 +225,12 @@ func lose_battle() -> void:
 	player_hp = 0
 	player_health.value = 0
 	update_health_ui()
+	beat.show()
 	defeat_label.show()
+	defeat_label.move_to_front()
+	await get_tree().create_timer(5.0).timeout
+	BattleData.clear_selected_topic()
+	BattleData.return_to_tv()
 
 func disable_answers() -> void:
 	for button in answer_buttons:

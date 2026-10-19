@@ -38,6 +38,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray()
 
+[gui]
+
+theme/custom_font="uid://gycnap01qhen"
+
 [input]
 
 move_up={

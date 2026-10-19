@@ -157,19 +157,26 @@ func _unhandled_input(event: InputEvent) -> void:
 			focused.pressed.emit()
 
 func _move_topic_focus(direction: int) -> void:
-	if selected_button == -1:
-		if direction > 0:
-			selected_button = 0
+	if topic_buttons.is_empty():
+		return
+	var attempts: int = 0
+	while attempts < topic_buttons.size():
+		if selected_button == -1:
+			if direction > 0:
+				selected_button = 0
+			else:
+				selected_button = topic_buttons.size() - 1
 		else:
-			selected_button = topic_buttons.size() - 1
-	else:
-		selected_button = (
-			selected_button
-			+ direction
-			+ topic_buttons.size()
-		) % topic_buttons.size()
-
-	topic_buttons[selected_button].grab_focus()
+			selected_button = (
+				selected_button
+				+ direction
+				+ topic_buttons.size()
+			) % topic_buttons.size()
+		var button: BaseButton = topic_buttons[selected_button]
+		if not button.disabled:
+			button.grab_focus()
+			return
+		attempts += 1
 
 func _on_topic_focus_entered(button: BaseButton) -> void:
 	selected_button = topic_buttons.find(button)
@@ -240,21 +247,43 @@ func hide_tv_menu() -> void:
 
 func show_tv_menu() -> void:
 	_set_menu_visible(true)
-	selected_button = -1
-	var focused: Control = get_viewport().gui_get_focus_owner()
-	if focused != null:
-		focused.release_focus()
-	_hide_hover_effects()
-	_set_info_text(default_info_text)
-	Input.set_mouse_mode(
-		Input.MOUSE_MODE_VISIBLE
+	scam_button.disabled = BattleData.is_topic_completed(
+		BattleData.Topic.SCAM
 	)
+	malware_button.disabled = BattleData.is_topic_completed(
+		BattleData.Topic.MALWARE
+	)
+	phishing_button.disabled = BattleData.is_topic_completed(
+		BattleData.Topic.PHISHING
+	)
+	social_engineering_button.disabled = BattleData.is_topic_completed(
+		BattleData.Topic.SOCIAL_ENGINEERING
+	)
+	selected_button = -1
 
 func _hide_hover_effects() -> void:
-	hover_scam.hide()
-	hover_malware.hide()
-	hover_phishing.hide()
-	hover_social_engineering.hide()
+	if BattleData.is_topic_completed(BattleData.Topic.SCAM):
+		hover_scam.color = Color.RED
+		hover_scam.show()
+	else:
+		hover_scam.hide()
+	if BattleData.is_topic_completed(BattleData.Topic.MALWARE):
+		hover_malware.color = Color.RED
+		hover_malware.show()
+	else:
+		hover_malware.hide()
+	if BattleData.is_topic_completed(BattleData.Topic.PHISHING):
+		hover_phishing.color = Color.RED
+		hover_phishing.show()
+	else:
+		hover_phishing.hide()
+	if BattleData.is_topic_completed(
+		BattleData.Topic.SOCIAL_ENGINEERING
+	):
+		hover_social_engineering.color = Color.RED
+		hover_social_engineering.show()
+	else:
+		hover_social_engineering.hide()
 
 func _on_scam_hovered() -> void:
 	scam_button.grab_focus()

@@ -14,6 +14,21 @@ var scam_cleared: bool = false
 var malware_cleared: bool = false
 var phishing_cleared: bool = false
 var social_engineering_cleared: bool = false
+var completed_topics: Dictionary = {}
+var returning_from_battle: bool = false
+
+func complete_topic(topic: Topic) -> void:
+	completed_topics[topic] = true
+
+func is_topic_completed(topic: Topic) -> bool:
+	return completed_topics.get(topic, false)
+
+func return_to_tv() -> void:
+	returning_from_battle = true
+	get_tree().paused = false
+	get_tree().change_scene_to_file(
+		"res://main/scenes/game.tscn"
+	)
 
 func select_topic(topic: Topic) -> void:
 	selected_topic = topic

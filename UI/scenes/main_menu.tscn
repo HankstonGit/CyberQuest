@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cpalimddurtgc" path="res://UI/scripts/MainMenu.gd" id="1_a42fl"]
 [ext_resource type="Script" uid="uid://bfxp4ewgmu6iu" path="res://UI/scripts/matrix_background.gd" id="2_0eype"]
 [ext_resource type="AudioStream" uid="uid://dfd7gtcu8pis1" path="res://UI/assets/Menu_Button.mp3" id="3_xnki4"]
+[ext_resource type="AudioStream" uid="uid://cyviorrvkkxnj" path="res://main/assets/Menu_v1.mp3" id="4_eslsf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_x5rka"]
 
@@ -81,6 +82,12 @@ text = "Quit"
 
 [node name="MenuButton" type="AudioStreamPlayer" parent="." unique_id=855834331]
 stream = ExtResource("3_xnki4")
+
+[node name="MenuV1" type="AudioStreamPlayer" parent="." unique_id=1828959948]
+stream = ExtResource("4_eslsf")
+volume_db = -20.0
+pitch_scale = 0.75
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
