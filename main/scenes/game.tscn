@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ke2fsjgipmjl" path="res://main/script/dialouge.gd" id="8_uphns"]
 [ext_resource type="Script" uid="uid://dpgbgjs12gltx" path="res://main/script/pause_calculator.gd" id="9_tkmog"]
 [ext_resource type="Script" uid="uid://bw3i6imxrdk7s" path="res://level/dialouge_manager.gd" id="10_tkmog"]
+[ext_resource type="AudioStream" uid="uid://d0ovbbfbweysc" path="res://UI/assets/Yapping_v1.mp3" id="12_hj80p"]
 [ext_resource type="PackedScene" uid="uid://bxg6oejpaitdt" path="res://level/interactable/flag/flag_reached_screen.tscn" id="19_cpgj4"]
 
 [node name="Game" type="Node" unique_id=1923663789]
@@ -340,6 +341,10 @@ text = "Instructor"
 
 [node name="DialougeManager" type="Node" parent="." unique_id=1194347204]
 script = ExtResource("10_tkmog")
+
+[node name="YappingV1" type="AudioStreamPlayer" parent="." unique_id=979923216]
+stream = ExtResource("12_hj80p")
+autoplay = true
 
 [connection signal="pressed" from="TVMenu/BoxContainer/VBoxContainer/Scam" to="." method="_on_scam_pressed"]
 [connection signal="pressed" from="TVMenu/BoxContainer/VBoxContainer/Malware" to="." method="_on_malware_pressed"]

@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://dg8vy2j4lgxay"]
 
+[ext_resource type="Script" uid="uid://b0q8l13tqrsvy" path="res://main/script/eagle.gd" id="1_4ijh2"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s563t"]
 resource_name = "Material.004"
 cull_mode = 2
@@ -886,7 +888,7 @@ radius = 0.48779297
 height = 1.0253906
 
 [node name="Eagle" type="CharacterBody3D" unique_id=1089404743]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("1_4ijh2")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="." unique_id=244580198]
 bones/0/name = "Armature"

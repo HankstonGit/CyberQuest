@@ -6,6 +6,9 @@ const SOPHIA_SCENE: PackedScene = preload(
 const CYBERPEST_SCENE: PackedScene = preload(
 	"res://main/characters/cyber_pest.tscn"
 )
+const EAGLE_SCENE: PackedScene = preload(
+	"res://main/characters/eagle.tscn"
+)
 @onready var battle_ui: CanvasLayer = $BattleUI
 @onready var settings_layer: CanvasLayer = $Settings
 @onready var fighters: Node3D = $Fighters 
@@ -26,6 +29,8 @@ var camera_move_time: float = 0.0
 var game_paused: bool = false
 
 func _ready() -> void:
+	if BattleData.ally_scene == null: # Automatically select Eagle if no CyberPet was selected.
+		BattleData.ally_scene = EAGLE_SCENE
 	settings_layer.hide()
 	settings_menu.hide()
 	battle_ui.show()
@@ -44,16 +49,13 @@ func _process(delta: float) -> void:
 	camera.position.x = start_position.x + sin(camera_move_time) * camera_move_distance
 
 func toggle_pause() -> void:
-	print("PAUSE PRESSED")
 	game_paused = !game_paused
 	if game_paused:
-		print("PAUSING")
 		battle_ui.hide()
 		settings_layer.show()
 		settings_menu.show()
 		get_tree().paused = true
 	else:
-		print("UNPAUSING")
 		get_tree().paused = false
 		settings_menu.hide()
 		settings_layer.hide()
@@ -63,14 +65,12 @@ func spawn_battle() -> void:
 	var sophia = SOPHIA_SCENE.instantiate() 
 	fighters.add_child(sophia) 
 	sophia.global_transform = player_spawn.global_transform 
-	
-	if BattleData.ally_scene: # CYBERPET ALLY
-		var ally = BattleData.ally_scene.instantiate() 
-		fighters.add_child(ally) 
-		ally.global_transform = ally_spawn.global_transform 
-	else: 
-		push_error("GenericStage: No CyberPet ally selected!") 
-	
+	if BattleData.ally_scene:
+		var ally = BattleData.ally_scene.instantiate()
+		fighters.add_child(ally)
+		ally.global_transform = ally_spawn.global_transform
+	else:
+		push_error("GenericStage: No CyberPet ally selected!")
 	var enemy = CYBERPEST_SCENE.instantiate() # CYBERPEST ENEMY
 	fighters.add_child(enemy)
 	enemy.global_transform = enemy_spawn.global_transform

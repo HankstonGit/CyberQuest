@@ -17,6 +17,9 @@ extends CanvasLayer
 	$BattlePanel/Answers/Button3
 @onready var answer_4: Button = \
 	$BattlePanel/Answers/Button4
+@onready var lost_battle_noise: AudioStreamPlayer = $"../LostBattleNoise"
+@onready var warning_noise: AudioStreamPlayer = $"../WarningNoise"
+@onready var fail_game_noise: AudioStreamPlayer = $"../FailGameNoise"
 @onready var victory_label: Label = $Victory
 @onready var defeat_label: Label = $Defeat
 @onready var beat: ColorRect = $Beat
@@ -156,6 +159,9 @@ func _on_answer_pressed(index: int) -> void:
 
 func handle_correct_answer(index: int) -> void:
 	correct_answers += 1
+	var ally = get_battle_ally()
+	if ally:
+		ally.attack()
 	enemy_hp_value -= 1
 	enemy_hp.value = enemy_hp_value
 	show_answer_result(index, true)
@@ -165,15 +171,28 @@ func handle_correct_answer(index: int) -> void:
 	await get_tree().create_timer(0.8).timeout
 	next_question()
 
+
 func handle_wrong_answer(index: int) -> void:
 	wrong_answers += 1
-	player_hp -= 1
+	player_hp = maxi(player_hp - 1, 0)
+	var ally = get_battle_ally()
+	if ally:
+		ally.take_damage(1)
 	player_health.value = player_hp
 	show_answer_result(index, false)
 	update_health_ui()
-	if wrong_answers >= 3:
+	if player_hp <= 0: # HP reached zero: play the fail sound immediately.
+		lost_battle_noise.stop()
+		warning_noise.stop()
+		fail_game_noise.stop()
+		fail_game_noise.play()
 		lose_battle()
 		return
+	lost_battle_noise.stop() 	# Play the damage sound on non-lethal hits.
+	lost_battle_noise.play() 	# Warn the player when only 1 HP remains.
+	if player_hp == 1:
+		warning_noise.stop()
+		warning_noise.play()
 	await get_tree().create_timer(0.8).timeout
 	next_question()
 
@@ -225,16 +244,20 @@ func lose_battle() -> void:
 	player_hp = 0
 	player_health.value = 0
 	update_health_ui()
-	beat.show()
+	await get_tree().create_timer(3.0).timeout # Give the Eagle time to show its death animation.
+	beat.show() # Now show the defeat menu.
 	defeat_label.show()
 	defeat_label.move_to_front()
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(5.0).timeout # Keep the defeat menu visible before returning to the TV.
 	BattleData.clear_selected_topic()
 	BattleData.return_to_tv()
 
 func disable_answers() -> void:
 	for button in answer_buttons:
 		button.disabled = true
+
+func get_battle_ally() -> Node:
+	return get_tree().get_first_node_in_group("battle_ally")
 
 func get_scam_questions() -> Array[Dictionary]:
 	return [
