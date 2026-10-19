@@ -262,64 +262,44 @@ func get_battle_ally() -> Node:
 func get_scam_questions() -> Array[Dictionary]:
 	return [
 		{
-			"question": "Which is a common sign of a scam?",
+			"question": "A Hookling offers 100 free sparkle gems if you tell it your game password. What should you do?",
 			"answers": [
-				"A request for gift cards",
-				"A normal software update",
-				"A strong password",
-				"A trusted bookmark"
+				"Never share your password for rewards.",
+				"Share your password to get the gems.",
+				"Send your password only if the prize looks real.",
+				"Ask the Hookling to keep your password secret."
 			],
 			"correct": 0
 		},
 		{
-			"question": "What should you do if an offer seems too good to be true?",
+			"question": "A Hookling says you won a VIP badge and asks for your email and secret code. What is the safest choice?",
 			"answers": [
-				"Send money quickly",
-				"Verify the person or company",
-				"Give them your password",
-				"Ignore all security warnings"
+				"Type your email and secret code to claim the badge.",
+				"Ignore the message and tell a trusted grown-up.",
+				"Send only the secret code.",
+				"Click the message again to see if the prize is real."
 			],
 			"correct": 1
 		},
 		{
-			"question": "Which payment request can be a scam warning sign?",
+			"question": "A pop-up promises a rare critter if you enter your parent's phone number. What should you do?",
 			"answers": [
-				"Gift cards",
-				"Normal checkout",
-				"School lunch card",
-				"Library card"
+				"Enter the number to spin the wheel.",
+				"Use a friend's phone number instead.",
+				"Keep phone numbers private.",
+				"Enter the number only if the wheel looks fun."
 			],
-			"correct": 0
+			"correct": 2
 		},
 		{
-			"question": "Where can scams happen?",
+			"question": "A message offers unlimited coins but asks for your username and password to activate a secret gift code. What should you do?",
 			"answers": [
-				"Only through email",
-				"Only on websites",
-				"Only through phone calls",
-				"Through many different methods"
+				"Send your username and password to get the coins.",
+				"Share the password if the code is secret.",
+				"Try the code first, then decide.",
+				"Don't share usernames or passwords for rewards."
 			],
 			"correct": 3
-		},
-		{
-			"question": "What is an impersonation scam?",
-			"answers": [
-				"Someone pretending to be a trusted person",
-				"Updating antivirus software",
-				"Creating a strong password",
-				"Restarting a computer"
-			],
-			"correct": 0
-		},
-		{
-			"question": "What should you do before sending money online?",
-			"answers": [
-				"Verify who you are sending it to",
-				"Disable antivirus",
-				"Share your password",
-				"Click every link"
-			],
-			"correct": 0
 		}
 	]
 
@@ -327,64 +307,44 @@ func get_scam_questions() -> Array[Dictionary]:
 func get_malware_questions() -> Array[Dictionary]:
 	return [
 		{
-			"question": "What is malware?",
+			"question": "A Malware Mite says your tablet is broken and tells you to click a link right now. What should you do?",
 			"answers": [
-				"Malicious software",
-				"A safe website",
-				"A strong password",
-				"A computer monitor"
+				"Close the pop-up and ask a grown-up for help.",
+				"Click the link before the countdown ends.",
+				"Download whatever the pop-up recommends.",
+				"Give the pop-up permission to fix the tablet."
 			],
 			"correct": 0
 		},
 		{
-			"question": "Which is a type of malware?",
+			"question": "A strange file named super_song_FREE.exe promises a secret song. What should you do?",
 			"answers": [
-				"Firewall",
-				"Ransomware",
-				"Keyboard",
-				"Router"
+				"Download it because free songs are fun.",
+				"Only download music from the real game store.",
+				"Open it to check what it does.",
+				"Share it with friends to see if it works."
 			],
 			"correct": 1
 		},
 		{
-			"question": "Which can be a warning sign of malware?",
+			"question": "A Malware Mite offers an unfamiliar Super Speed Booster for your slow device. What is the safest choice?",
 			"answers": [
-				"Unexpected pop-ups",
-				"A normal login",
-				"Using two-factor authentication",
-				"Updating software"
+				"Install it because it promises to help.",
+				"Install it and ignore any warnings.",
+				"Use the real settings menu to check for updates.",
+				"Give it access to everything on the device."
 			],
-			"correct": 0
+			"correct": 2
 		},
 		{
-			"question": "What can ransomware do?",
+			"question": "An unknown emoji pack asks for storage and camera permissions. What should you do?",
 			"answers": [
-				"Encrypt your files",
-				"Improve performance",
-				"Create strong passwords",
-				"Block suspicious links"
+				"Install it because the emojis look cool.",
+				"Allow every permission it asks for.",
+				"Install it first and check permissions later.",
+				"Don't give permissions to unknown downloads."
 			],
-			"correct": 0
-		},
-		{
-			"question": "How can you reduce malware risk?",
-			"answers": [
-				"Download unknown files",
-				"Keep software updated",
-				"Disable antivirus",
-				"Ignore security warnings"
-			],
-			"correct": 1
-		},
-		{
-			"question": "What can spyware do?",
-			"answers": [
-				"Secretly collect information",
-				"Repair damaged hardware",
-				"Improve internet speed",
-				"Create backups"
-			],
-			"correct": 0
+			"correct": 3
 		}
 	]
 
@@ -392,64 +352,44 @@ func get_malware_questions() -> Array[Dictionary]:
 func get_phishing_questions() -> Array[Dictionary]:
 	return [
 		{
-			"question": "What is phishing?",
+			"question": "A poster shows a glowing QR code that says 'Scan me for a surprise!' What should you do?",
 			"answers": [
-				"A fake message designed to steal information",
-				"A type of antivirus",
-				"A safe login method",
-				"A computer update"
+				"Ask a trusted grown-up before scanning an unknown code.",
+				"Scan any QR code because it is always safe.",
+				"Scan it and enter any information it requests.",
+				"Share the code with friends so they can try it."
 			],
 			"correct": 0
 		},
 		{
-			"question": "Which is a phishing warning sign?",
+			"question": "A login page offers 50 bonus coins, but its logo looks slightly wrong. What should you do?",
 			"answers": [
-				"A suspicious link",
-				"A normal bookmark",
-				"A secure password",
-				"Updated software"
-			],
-			"correct": 0
-		},
-		{
-			"question": "What should you do with a suspicious link?",
-			"answers": [
-				"Click it immediately",
-				"Do not click it",
-				"Send your password",
-				"Disable antivirus"
+				"Log in because it promises rewards.",
+				"Only log in through the real game app or website.",
+				"Enter your password to check whether it works.",
+				"Use the same password and secret code."
 			],
 			"correct": 1
 		},
 		{
-			"question": "Attackers may pretend to be which of these?",
+			"question": "A message says someone wants to be your friend and sends a strange link. What should you do?",
 			"answers": [
-				"Banks or employers",
-				"Only video games",
-				"Only antivirus programs",
-				"Only friends"
+				"Open it because friend requests are safe.",
+				"Enter your login details to see who it is.",
+				"Don't tap unknown links; they may be phishing.",
+				"Forward the link to everyone you know."
 			],
-			"correct": 0
+			"correct": 2
 		},
 		{
-			"question": "What should you check before entering login information?",
+			"question": "A message says you must install a special game update using a link that doesn't match the real update icon. What should you do?",
 			"answers": [
-				"The website address",
-				"Your screen brightness",
-				"Your speaker volume",
-				"Your wallpaper"
+				"Tap it because every update message is safe.",
+				"Install it before the message disappears.",
+				"Enter your password to approve the update.",
+				"Get updates from the official app store or settings."
 			],
-			"correct": 0
-		},
-		{
-			"question": "What is a safer way to visit your bank website?",
-			"answers": [
-				"Use a suspicious email link",
-				"Type the official address directly",
-				"Use any pop-up",
-				"Click an unknown advertisement"
-			],
-			"correct": 1
+			"correct": 3
 		}
 	]
 
@@ -457,63 +397,43 @@ func get_phishing_questions() -> Array[Dictionary]:
 func get_social_engineering_questions() -> Array[Dictionary]:
 	return [
 		{
-			"question": "What does social engineering target?",
+			"question": "A stranger offers a rare creature if you tell them your home address. What should you do?",
 			"answers": [
-				"Human trust and behavior",
-				"Only computer hardware",
-				"Only internet speed",
-				"Only software updates"
+				"Keep your address private.",
+				"Share your address to get the rare creature.",
+				"Give only your street name.",
+				"Share it if the trade sounds fair."
 			],
 			"correct": 0
 		},
 		{
-			"question": "Which is a social engineering tactic?",
+			"question": "A game app suddenly asks to use your camera. What is the safest response?",
 			"answers": [
-				"Creating fake urgency",
-				"Installing updates",
-				"Using strong passwords",
-				"Backing up files"
+				"Always allow camera access without checking.",
+				"Only allow permission when you understand why the app needs it.",
+				"Allow it because every app needs a camera.",
+				"Give permission and ask questions later."
 			],
-			"correct": 0
+			"correct": 1
 		},
 		{
-			"question": "What should you do before sharing sensitive information?",
+			"question": "Someone claiming to be your school friend messages you and says not to tell anyone. What should you remember?",
 			"answers": [
-				"Verify who you are talking to",
-				"Share it immediately",
-				"Disable antivirus",
-				"Ignore warning signs"
+				"It's okay to keep secrets if they say they're a friend.",
+				"Send them private information to prove you're friends.",
+				"Keeping secrets for online strangers is unsafe.",
+				"Never tell a trusted adult about online messages."
 			],
-			"correct": 0
+			"correct": 2
 		},
 		{
-			"question": "Why do attackers create fake emergencies?",
+			"question": "A familiar-looking character urgently demands your account name and pressures you to respond fast. What should you do?",
 			"answers": [
-				"To pressure people into acting quickly",
-				"To improve computer speed",
-				"To update software",
-				"To protect accounts"
+				"Send your account name right away to help.",
+				"Respond quickly so the character doesn't get upset.",
+				"Share account details if the character looks familiar.",
+				"Pause and think before responding."
 			],
-			"correct": 0
-		},
-		{
-			"question": "What information should you be careful sharing?",
-			"answers": [
-				"Passwords and verification codes",
-				"Your favorite color",
-				"Your screen resolution",
-				"Your game volume"
-			],
-			"correct": 0
-		},
-		{
-			"question": "What is the safest response to unexpected pressure?",
-			"answers": [
-				"Stop and verify the request",
-				"Act immediately",
-				"Send your password",
-				"Click every link"
-			],
-			"correct": 0
+			"correct": 3
 		}
 	]

@@ -55,3 +55,20 @@ func is_topic_cleared(topic: Topic) -> bool:
 		Topic.SOCIAL_ENGINEERING:
 			return social_engineering_cleared
 	return false
+
+func all_topics_completed() -> bool:
+	return (
+		is_topic_completed(Topic.SCAM)
+		and is_topic_completed(Topic.MALWARE)
+		and is_topic_completed(Topic.PHISHING)
+		and is_topic_completed(Topic.SOCIAL_ENGINEERING)
+	)
+
+func finish_battle_flow() -> void:
+	get_tree().paused = false
+	if all_topics_completed():
+		get_tree().change_scene_to_file(
+			"res://main/scenes/credits.tscn"
+		)
+	else:
+		return_to_tv()
