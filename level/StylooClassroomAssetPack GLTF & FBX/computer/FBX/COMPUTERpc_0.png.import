@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxxm5vm1v3coj"
 path.s3tc="res://.godot/imported/COMPUTERpc_0.png-7d49b34f4995e48607733f3c22b65e77.s3tc.ctex"
+path.etc2="res://.godot/imported/COMPUTERpc_0.png-7d49b34f4995e48607733f3c22b65e77.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/computer/FBX/COMPUTERpc_0.png"
-dest_files=["res://.godot/imported/COMPUTERpc_0.png-7d49b34f4995e48607733f3c22b65e77.s3tc.ctex"]
+dest_files=["res://.godot/imported/COMPUTERpc_0.png-7d49b34f4995e48607733f3c22b65e77.s3tc.ctex", "res://.godot/imported/COMPUTERpc_0.png-7d49b34f4995e48607733f3c22b65e77.etc2.ctex"]
 
 [params]
 

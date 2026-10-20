@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0fewowsmdw7o"
 path.s3tc="res://.godot/imported/paintingreference_004_color.jpg-0090a3fabe23269624a4f4a8da499254.s3tc.ctex"
+path.etc2="res://.godot/imported/paintingreference_004_color.jpg-0090a3fabe23269624a4f4a8da499254.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/ArtRoom/glb/paintingreference_004_color.jpg"
-dest_files=["res://.godot/imported/paintingreference_004_color.jpg-0090a3fabe23269624a4f4a8da499254.s3tc.ctex"]
+dest_files=["res://.godot/imported/paintingreference_004_color.jpg-0090a3fabe23269624a4f4a8da499254.s3tc.ctex", "res://.godot/imported/paintingreference_004_color.jpg-0090a3fabe23269624a4f4a8da499254.etc2.ctex"]
 
 [params]
 

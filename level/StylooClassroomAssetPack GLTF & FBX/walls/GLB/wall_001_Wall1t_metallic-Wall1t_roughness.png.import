@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk4oy1s8aislc"
 path.s3tc="res://.godot/imported/wall_001_Wall1t_metallic-Wall1t_roughness.png-7d6670a45f5e3b38b176e4022a83706f.s3tc.ctex"
+path.etc2="res://.godot/imported/wall_001_Wall1t_metallic-Wall1t_roughness.png-7d6670a45f5e3b38b176e4022a83706f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/walls/GLB/wall_001_Wall1t_metallic-Wall1t_roughness.png"
-dest_files=["res://.godot/imported/wall_001_Wall1t_metallic-Wall1t_roughness.png-7d6670a45f5e3b38b176e4022a83706f.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall_001_Wall1t_metallic-Wall1t_roughness.png-7d6670a45f5e3b38b176e4022a83706f.s3tc.ctex", "res://.godot/imported/wall_001_Wall1t_metallic-Wall1t_roughness.png-7d6670a45f5e3b38b176e4022a83706f.etc2.ctex"]
 
 [params]
 

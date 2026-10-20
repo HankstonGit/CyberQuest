@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs7jg71ikod5k"
 path.s3tc="res://.godot/imported/shelfwithwheels_ImphenziaPalette01-256-Gradient.png-92048b48428057f548ce525fa09a672c.s3tc.ctex"
+path.etc2="res://.godot/imported/shelfwithwheels_ImphenziaPalette01-256-Gradient.png-92048b48428057f548ce525fa09a672c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/GLTF/shelfwithwheels_ImphenziaPalette01-256-Gradient.png"
-dest_files=["res://.godot/imported/shelfwithwheels_ImphenziaPalette01-256-Gradient.png-92048b48428057f548ce525fa09a672c.s3tc.ctex"]
+dest_files=["res://.godot/imported/shelfwithwheels_ImphenziaPalette01-256-Gradient.png-92048b48428057f548ce525fa09a672c.s3tc.ctex", "res://.godot/imported/shelfwithwheels_ImphenziaPalette01-256-Gradient.png-92048b48428057f548ce525fa09a672c.etc2.ctex"]
 
 [params]
 

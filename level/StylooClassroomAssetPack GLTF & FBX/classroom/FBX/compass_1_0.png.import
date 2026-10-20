@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://blkb1xjf1dg4y"
 path.s3tc="res://.godot/imported/compass_1_0.png-b98448fc43c0b477ec267bb5adbcd543.s3tc.ctex"
+path.etc2="res://.godot/imported/compass_1_0.png-b98448fc43c0b477ec267bb5adbcd543.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/compass_1_0.png"
-dest_files=["res://.godot/imported/compass_1_0.png-b98448fc43c0b477ec267bb5adbcd543.s3tc.ctex"]
+dest_files=["res://.godot/imported/compass_1_0.png-b98448fc43c0b477ec267bb5adbcd543.s3tc.ctex", "res://.godot/imported/compass_1_0.png-b98448fc43c0b477ec267bb5adbcd543.etc2.ctex"]
 
 [params]
 

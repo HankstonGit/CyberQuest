@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3cub2l17sjr4"
 path.s3tc="res://.godot/imported/CAFETERIAcake_002_0.png-6b4a2a3fd64a8a0fabd01e5dcf1c1b3b.s3tc.ctex"
+path.etc2="res://.godot/imported/CAFETERIAcake_002_0.png-6b4a2a3fd64a8a0fabd01e5dcf1c1b3b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/catferia/FBX/CAFETERIAcake_002_0.png"
-dest_files=["res://.godot/imported/CAFETERIAcake_002_0.png-6b4a2a3fd64a8a0fabd01e5dcf1c1b3b.s3tc.ctex"]
+dest_files=["res://.godot/imported/CAFETERIAcake_002_0.png-6b4a2a3fd64a8a0fabd01e5dcf1c1b3b.s3tc.ctex", "res://.godot/imported/CAFETERIAcake_002_0.png-6b4a2a3fd64a8a0fabd01e5dcf1c1b3b.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5b6bfio5y7vc"
 path.s3tc="res://.godot/imported/statue_ImphenziaPalette01-256-Gradient.png-14de09f0f258f8aa462540eebe475ac7.s3tc.ctex"
+path.etc2="res://.godot/imported/statue_ImphenziaPalette01-256-Gradient.png-14de09f0f258f8aa462540eebe475ac7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/ArtRoom/glb/statue_ImphenziaPalette01-256-Gradient.png"
-dest_files=["res://.godot/imported/statue_ImphenziaPalette01-256-Gradient.png-14de09f0f258f8aa462540eebe475ac7.s3tc.ctex"]
+dest_files=["res://.godot/imported/statue_ImphenziaPalette01-256-Gradient.png-14de09f0f258f8aa462540eebe475ac7.s3tc.ctex", "res://.godot/imported/statue_ImphenziaPalette01-256-Gradient.png-14de09f0f258f8aa462540eebe475ac7.etc2.ctex"]
 
 [params]
 

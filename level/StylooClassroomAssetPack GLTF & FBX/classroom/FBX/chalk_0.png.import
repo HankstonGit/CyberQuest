@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2qwq0qb8loo2"
 path.s3tc="res://.godot/imported/chalk_0.png-8cdfa4e3e06ca398a809e1a3401e2ccf.s3tc.ctex"
+path.etc2="res://.godot/imported/chalk_0.png-8cdfa4e3e06ca398a809e1a3401e2ccf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/chalk_0.png"
-dest_files=["res://.godot/imported/chalk_0.png-8cdfa4e3e06ca398a809e1a3401e2ccf.s3tc.ctex"]
+dest_files=["res://.godot/imported/chalk_0.png-8cdfa4e3e06ca398a809e1a3401e2ccf.s3tc.ctex", "res://.godot/imported/chalk_0.png-8cdfa4e3e06ca398a809e1a3401e2ccf.etc2.ctex"]
 
 [params]
 

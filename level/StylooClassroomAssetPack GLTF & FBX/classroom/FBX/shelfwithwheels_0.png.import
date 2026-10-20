@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dybjmujwgp0cg"
 path.s3tc="res://.godot/imported/shelfwithwheels_0.png-3371c4031b083b5cd5167bc5430fffcb.s3tc.ctex"
+path.etc2="res://.godot/imported/shelfwithwheels_0.png-3371c4031b083b5cd5167bc5430fffcb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/shelfwithwheels_0.png"
-dest_files=["res://.godot/imported/shelfwithwheels_0.png-3371c4031b083b5cd5167bc5430fffcb.s3tc.ctex"]
+dest_files=["res://.godot/imported/shelfwithwheels_0.png-3371c4031b083b5cd5167bc5430fffcb.s3tc.ctex", "res://.godot/imported/shelfwithwheels_0.png-3371c4031b083b5cd5167bc5430fffcb.etc2.ctex"]
 
 [params]
 

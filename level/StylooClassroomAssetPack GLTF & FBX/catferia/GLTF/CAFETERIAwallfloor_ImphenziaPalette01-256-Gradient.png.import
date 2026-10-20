@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkoc5wrh3g5ul"
 path.s3tc="res://.godot/imported/CAFETERIAwallfloor_ImphenziaPalette01-256-Gradient.png-df2fb4d7e208619a1ff12caeac27ac35.s3tc.ctex"
+path.etc2="res://.godot/imported/CAFETERIAwallfloor_ImphenziaPalette01-256-Gradient.png-df2fb4d7e208619a1ff12caeac27ac35.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/catferia/GLTF/CAFETERIAwallfloor_ImphenziaPalette01-256-Gradient.png"
-dest_files=["res://.godot/imported/CAFETERIAwallfloor_ImphenziaPalette01-256-Gradient.png-df2fb4d7e208619a1ff12caeac27ac35.s3tc.ctex"]
+dest_files=["res://.godot/imported/CAFETERIAwallfloor_ImphenziaPalette01-256-Gradient.png-df2fb4d7e208619a1ff12caeac27ac35.s3tc.ctex", "res://.godot/imported/CAFETERIAwallfloor_ImphenziaPalette01-256-Gradient.png-df2fb4d7e208619a1ff12caeac27ac35.etc2.ctex"]
 
 [params]
 

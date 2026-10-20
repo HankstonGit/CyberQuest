@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://l6apnym62efq"
 path.s3tc="res://.godot/imported/schoolbus_0.png-8ff05a45107933cd358cf3f423f0f557.s3tc.ctex"
+path.etc2="res://.godot/imported/schoolbus_0.png-8ff05a45107933cd358cf3f423f0f557.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/schoolbus_0.png"
-dest_files=["res://.godot/imported/schoolbus_0.png-8ff05a45107933cd358cf3f423f0f557.s3tc.ctex"]
+dest_files=["res://.godot/imported/schoolbus_0.png-8ff05a45107933cd358cf3f423f0f557.s3tc.ctex", "res://.godot/imported/schoolbus_0.png-8ff05a45107933cd358cf3f423f0f557.etc2.ctex"]
 
 [params]
 

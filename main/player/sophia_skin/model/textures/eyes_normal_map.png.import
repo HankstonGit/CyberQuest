@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjvo8w2ptm7fc"
 path.s3tc="res://.godot/imported/eyes_normal_map.png-83de0a1b0c281eb5b16c1e4ebad0e7d2.s3tc.ctex"
+path.etc2="res://.godot/imported/eyes_normal_map.png-83de0a1b0c281eb5b16c1e4ebad0e7d2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://main/player/sophia_skin/model/textures/eyes_normal_map.png"
-dest_files=["res://.godot/imported/eyes_normal_map.png-83de0a1b0c281eb5b16c1e4ebad0e7d2.s3tc.ctex"]
+dest_files=["res://.godot/imported/eyes_normal_map.png-83de0a1b0c281eb5b16c1e4ebad0e7d2.s3tc.ctex", "res://.godot/imported/eyes_normal_map.png-83de0a1b0c281eb5b16c1e4ebad0e7d2.etc2.ctex"]
 
 [params]
 

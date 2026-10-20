@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cchagudw2g1ir"
 path.s3tc="res://.godot/imported/PRINCIPALOFFICEdesk_ImphenziaPalette01-256-Gradient.png-ed752c58f464f0df60524106730d03f2.s3tc.ctex"
+path.etc2="res://.godot/imported/PRINCIPALOFFICEdesk_ImphenziaPalette01-256-Gradient.png-ed752c58f464f0df60524106730d03f2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/principal office/GLTF/PRINCIPALOFFICEdesk_ImphenziaPalette01-256-Gradient.png"
-dest_files=["res://.godot/imported/PRINCIPALOFFICEdesk_ImphenziaPalette01-256-Gradient.png-ed752c58f464f0df60524106730d03f2.s3tc.ctex"]
+dest_files=["res://.godot/imported/PRINCIPALOFFICEdesk_ImphenziaPalette01-256-Gradient.png-ed752c58f464f0df60524106730d03f2.s3tc.ctex", "res://.godot/imported/PRINCIPALOFFICEdesk_ImphenziaPalette01-256-Gradient.png-ed752c58f464f0df60524106730d03f2.etc2.ctex"]
 
 [params]
 

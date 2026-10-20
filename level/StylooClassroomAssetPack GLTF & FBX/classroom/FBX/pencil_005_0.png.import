@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0mg8qybuao77"
 path.s3tc="res://.godot/imported/pencil_005_0.png-5817e6a4042adfc925354d93e843c809.s3tc.ctex"
+path.etc2="res://.godot/imported/pencil_005_0.png-5817e6a4042adfc925354d93e843c809.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/classroom/FBX/pencil_005_0.png"
-dest_files=["res://.godot/imported/pencil_005_0.png-5817e6a4042adfc925354d93e843c809.s3tc.ctex"]
+dest_files=["res://.godot/imported/pencil_005_0.png-5817e6a4042adfc925354d93e843c809.s3tc.ctex", "res://.godot/imported/pencil_005_0.png-5817e6a4042adfc925354d93e843c809.etc2.ctex"]
 
 [params]
 

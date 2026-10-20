@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf6fxcj5f7xr7"
 path.s3tc="res://.godot/imported/CAFETERIAcan_002_0.png-7e480348d6a90a1d1900111ab7faba0f.s3tc.ctex"
+path.etc2="res://.godot/imported/CAFETERIAcan_002_0.png-7e480348d6a90a1d1900111ab7faba0f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/catferia/FBX/CAFETERIAcan_002_0.png"
-dest_files=["res://.godot/imported/CAFETERIAcan_002_0.png-7e480348d6a90a1d1900111ab7faba0f.s3tc.ctex"]
+dest_files=["res://.godot/imported/CAFETERIAcan_002_0.png-7e480348d6a90a1d1900111ab7faba0f.s3tc.ctex", "res://.godot/imported/CAFETERIAcan_002_0.png-7e480348d6a90a1d1900111ab7faba0f.etc2.ctex"]
 
 [params]
 

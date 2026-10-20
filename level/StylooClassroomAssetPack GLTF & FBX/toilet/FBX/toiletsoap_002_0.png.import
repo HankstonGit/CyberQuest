@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dir82okeov725"
 path.s3tc="res://.godot/imported/toiletsoap_002_0.png-901dae89647baf5e2d6d7b6df4538512.s3tc.ctex"
+path.etc2="res://.godot/imported/toiletsoap_002_0.png-901dae89647baf5e2d6d7b6df4538512.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/toilet/FBX/toiletsoap_002_0.png"
-dest_files=["res://.godot/imported/toiletsoap_002_0.png-901dae89647baf5e2d6d7b6df4538512.s3tc.ctex"]
+dest_files=["res://.godot/imported/toiletsoap_002_0.png-901dae89647baf5e2d6d7b6df4538512.s3tc.ctex", "res://.godot/imported/toiletsoap_002_0.png-901dae89647baf5e2d6d7b6df4538512.etc2.ctex"]
 
 [params]
 

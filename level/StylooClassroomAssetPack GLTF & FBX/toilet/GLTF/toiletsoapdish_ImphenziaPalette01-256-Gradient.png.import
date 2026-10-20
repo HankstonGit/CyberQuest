@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bahlchy056r0r"
 path.s3tc="res://.godot/imported/toiletsoapdish_ImphenziaPalette01-256-Gradient.png-2789b574441a03e3ed602d4cdff5ecce.s3tc.ctex"
+path.etc2="res://.godot/imported/toiletsoapdish_ImphenziaPalette01-256-Gradient.png-2789b574441a03e3ed602d4cdff5ecce.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://level/StylooClassroomAssetPack GLTF & FBX/toilet/GLTF/toiletsoapdish_ImphenziaPalette01-256-Gradient.png"
-dest_files=["res://.godot/imported/toiletsoapdish_ImphenziaPalette01-256-Gradient.png-2789b574441a03e3ed602d4cdff5ecce.s3tc.ctex"]
+dest_files=["res://.godot/imported/toiletsoapdish_ImphenziaPalette01-256-Gradient.png-2789b574441a03e3ed602d4cdff5ecce.s3tc.ctex", "res://.godot/imported/toiletsoapdish_ImphenziaPalette01-256-Gradient.png-2789b574441a03e3ed602d4cdff5ecce.etc2.ctex"]
 
 [params]
 
